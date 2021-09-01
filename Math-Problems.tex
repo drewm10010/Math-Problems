@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 
-\usepackage[sexy]{../../../drew}
+\usepackage[sexy]{drew}
+\usepackage{lmodern}
 
 \title{A Collection of Math Problems}
 \author{Drew Miller}
@@ -11,6 +12,1248 @@
 \maketitle
 \tableofcontents
 
-\section{}
+\section{Problem Solving Strategies}
+
+    \subsection{Induction}
+
+        \begin{exercise}
+            Prove that
+            \[1+2+3+\cdots+n = \frac{n(n+1)}{2}.\]
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that for any positive integer \(n\), there exists an \(n\)-digit number divisible by \(2^n\) containing only the digits \(2\) and \(3\).
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that
+            \[1^3 + 2^3 +\cdots+n^3 = \left(\frac{n(n+1)}{2}\right)^2\]
+        \end{exercise}
+        
+        \begin{exercise}
+            Prove that a set with $n$ elements has $2^n$ subsets, including the empty set and the set itself. For example, the set $\{a,b,c\}$ has the eight subsets
+            \[\emptyset,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\]
+        \end{exercise}
+        
+        \begin{exercise}
+            Given an unlimited supply of 3 and 5 cent stamps, prove that you can make any amount worth more than 7 cents.
+        \end{exercise}
+        
+        \begin{exercise}
+            The plane is divided into regions by straight lines. Show that it is always possible to color the regions with two colors so that the adjacent regions are never the same color (like a checkerboard).
+        \end{exercise}
+        
+        \begin{exercise}
+            Prove that \(3^n\geq n^3\) for all positive integers \(n\).
+        \end{exercise}
+        
+        \begin{exercise}
+            Prove that every number has a unique representation in binary form.
+        \end{exercise}
+
+        \begin{exercise}
+            Let \(\alpha\in\bR\) such that \(\alpha + 1/\alpha\in\bZ\). Prove that
+            \[\alpha^n+\frac{1}{\alpha^n}\in\bZ \text{ for any }n\in\bN.\]
+        \end{exercise}
+        
+        \begin{exercise}
+            In the plane, $n$ lines are drawn such that no two lines are parallel and no three meet in a point. Prove that these $n$ lines subdivide the plane into $\frac{1}{2}(n^2+n+2)$ regions.
+        \end{exercise}
+        
+        \begin{exercise}
+            Prove Fermat's Little Theorem. i.e., let \(p\) be a prime and \(a\in\bZ\). Then \(a^p\equiv a\pmod p\). That is, \(p\mid a^p-a\). (Hint: Use binomial theorem)
+        \end{exercise}
+
+        \begin{exercise}
+            Recall that the Fibonacci numbers are defined by $F_0=0$, $F_1=1$, and $F_{n+2}=F_{n+1}+F_n$. Prove that
+            \[\sum_{n=2}^\infty \arctan\frac{(-1)^n}{F_{2n}} = \frac{1}{2}\arctan{\frac{1}{2}}\]
+        \end{exercise}
+
+        \begin{exercise}
+            Prove the following:
+            \begin{enumerate}
+                \item \(F_nF_{n+2}=F_{n+1}^2+(-1)^{n+1}\)
+                \item \(\sum_{i=1}^nF_i^2=F_nF_{n+1}\)
+                \item \(F_n=(\alpha^n-\beta^n)/\sqrt5\), where \(\alpha=(1+\sqrt5)/2\) and \(\beta=(1-\sqrt5)/2\)
+            \end{enumerate}
+        \end{exercise}
+        
+        \begin{exercise}
+            Prove that $\frac{1}{\sqrt{1}}+\frac{1}{\sqrt{2}}+\cdots+\frac{1}{\sqrt{n}}<2\sqrt{n}$ for $n\geq 1$.
+        \end{exercise}
+
+        \begin{exercise}
+            If $n$ is even, prove that the volume of the $n$-dimensional hypersphere of radius $r$ (the set of points $(x_1,\dots,x_n)\in \bR^n$ such that $x_1^2+\cdots+x_n^2 = r^2$) is
+            \[\frac{\pi^{n/2}r^n}{(n/2)!}\]
+        \end{exercise}
+
+        
+
+    \subsection{Pigeonhole Principle}
+
+        \begin{exercise}
+            Among $13$ persons, show that two of them were born in the same month.
+        \end{exercise}
+            
+        \begin{exercise}
+             Show that if there are $n$ people at the party, then two of them know the same number of people (among those present).
+            \end{exercise}
+            
+        \begin{exercise}
+            Show that among any $n+1$ numbers, there must exist two whose difference is a multiple of $n$.
+        \end{exercise}
+            
+        \begin{exercise}
+            Every point of the plane is colored either red or blue. Prove that no matter how the coloring is done, there must exist two points, exactly $1$ unit apart, that are of the same color.
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $A$ be any set of $20$ distinct integers chosen from the arithmetic progression $1,4,7,\dots, 100$. Prove that there must be two distinct integers in $A$ whose sum is $104$.
+        \end{exercise}
+
+        \begin{exercise}
+            Show that the decimal expansion of a rational number must eventually become periodic.
+        \end{exercise}
+            
+        \begin{exercise}
+             Five points placed within a square of side length $1$. Prove that two of them are at most $\frac{\sqrt{2}}{2}$  units apart.
+        \end{exercise}
+            
+        \begin{exercise}
+             Let $X$ be any real number. Prove that among the numbers \[X,2X,\dots,(n-1)X\] there is one that differs from an integer by at most $1/n$. 
+        \end{exercise}
+            
+        \begin{exercise}
+            A chess player prepares for a tournament by playing some practice games over a period of eight weeks. She plays at least one game per day, but no more than $11$ games per week. Show that there must be a period of consecutive days during which she plays exactly $23$ games.
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that in any group of six people there are either three mutual friends or three mutual strangers.
+        \end{exercise}
+
+        \begin{exercise}
+            Let $x_1,x_2,\dots,x_k$ be real numbers such that the set $A=\{\cos(n\pi x_1)+\cos(n\pi x_2)+\cdots+\cos(n\pi x_k)\  |\  n\geq 1\}$ is finite. Prove that all the $x_i$ are rational numbers.
+        \end{exercise}
+
+    \subsection{Extremal Principle}
+
+        \begin{exercise}
+            There are $n$ distinct points in the plane. Any three of the points form a triangle of area $\leq 1$. Show that all $n$ points lie in a triangle of area $\leq 4$. 
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that $\sqrt{2}$ is irrational by using the extremal principle. (\emph{Hint}: Suppose $\sqrt{2}$ is rational, and let $n$ be the least positive integer such that $n\sqrt{2}$ is an integer. Derive a contradiction.)
+        \end{exercise}
+        
+        \begin{exercise}
+            Imagine an infinite chessboard that contains a positive integer in each square. If the value in each square is equal to the average of its four neighbors to the north, south, west, and east, prove the values in all the squares are equal. 
+        \end{exercise}
+        
+        \begin{exercise}
+            There are $2000$ points on a circle, and each point is given a number that is equal to the average of the numbers of its two nearest neighbors. Show that all the numbers must be equal.
+        \end{exercise}
+        
+        \begin{exercise}
+           Let $B$ and $W$ be finite sets of black and white points, respectively, in the plane, with the property that every line segment that joins two points of the same color contains a point of the other color. Prove that both sets must lie on a single line segment.
+        \end{exercise}
+        
+        \begin{exercise}
+            In the plane, $n$ lines are given ($n \geq 3$), no two of them parallel. Through every intersection of two lines passes at least an additional line. Prove that all lines pass through one point. 
+        \end{exercise}
+        
+        
+        \begin{exercise}[Sylvester Problem]
+            A finite set $S$ of points in the plane has the property that any line through two of them passes through a third. Show that all the points lie on a line. 
+        \end{exercise}
+        
+        \begin{exercise}
+            The Sikinian Parliament consists of one house. Every member has three enemies at most among the remaining members. Show that one can split the house into two houses so that every member has one enemy at most in his house. 
+        \end{exercise}
+
+        \begin{exercise}
+            There is no quadruple of positive integers $(x, y, z, u)$ satisfying 
+            \[x^2 + y^2 = 3(z^{2} + u^{2}).\]
+        \end{exercise}
+        
+        \begin{exercise}
+            In some country all roads between cities are one-way and such that once you leave a city you cannot return to it again. Prove that there exists a city into which all roads enter and a city from which all roads exit (Hint: consider the oriented graph with cities as vertices and roads as directed edges).  
+        \end{exercise}
+        
+        \begin{exercise}
+            Place the integers $1, 2, \ldots, n^2$ (without duplication) in any order onto an $n \times n$ chessboard, with one integer per square. Show that there exist two adjacent entries whose difference is at least $n + 1$ (Adjacent means horizontally or vertically or diagonally adjacent). 
+        \end{exercise}
+        
+        \begin{exercise}
+            Let $a_{1}, a_{2}, \ldots a_{n}$ be nonnegative reals satisfying $\sum_{i = 1}^{n} a_{i} = 3$ and $\sum_{i = 1}^{n} a_{i}^{2} > 1$. Prove that you may choose three of these numbers with sum $> 1$.
+        \end{exercise}
+        
+        \begin{exercise}
+            Find all real solutions of the system $(x + y)^{3} = z$, $(y + z)^{3} = x$, $(z + x)^{3} = y$. 
+        \end{exercise}
+        
+        \begin{exercise}
+        A polynomial with integer coefficients is called \term{primitive} if its coefficients are relatively prime (don't share a common prime factor). Prove that the product of two primitive polynomials is primitive.
+        \end{exercise}
+
+    \subsection{Invariants}
+
+        \begin{exercise}[The Hotel Room Paradox]
+            Three guests check into a hotel room. The manager says the bill is \$30, so each guest pays \$10. Later the manager realizes the bill should only have been \$25. To rectify this, he gives the bellhop \$5 as five one-dollar bills to return to the guests.
+
+            On the way to the guests' room to refund the money, the bellhop realizes that he cannot equally divide the five one-dollar bills among the three guests. As the guests aren't aware of the total of the revised bill, the bellhop decides to just give each guest \$1 back and keep \$2 as a tip for himself, and proceeds to do so.
+
+            As each guest got \$1 back, each guest only paid \$9, bringing the total paid to \$27. The bellhop kept \$2, which when added to the \$27, comes to \$29. So if the guests originally handed over \$30, what happened to the remaining \$1?
+        \end{exercise}
+
+        \begin{exercise}
+            Suppose two opposite corners of a chessboard \((8\times 8)\) are removed. Is it possible for the remaining 62 squares to be tiled with dominos \((2\times 1)\)?
+        \end{exercise}
+
+        \begin{exercise}[The Pizza Problem]
+            Suppose a pizza is divided into six slices. Moving clockwise, we add one slice of pepperoni to the first slice, none to the second, one to the third, and none to the remaining slices. You may only add one pepperoni to each adjacent slice. For instance, you may add one to slice 3 and 4, or slice 6 and 1. Is it possible to make every slice contain the same number of pepperoni?
+        \end{exercise}
+    
+        \begin{exercise}
+            In an elimination-style tournament of a two-person game (for example, chess or judo), once you lose, you are out, and the tournament proceeds until only one person is left. Find a formula for the number of games that must be played in an elimination-style tournament starting with \(n\) contestants.
+        \end{exercise}
+    
+        \begin{exercise}
+            Suppose the integer \(n\) is odd. First Kevin writes up the numbers \(1, 2, \ldots, 2n\) on the blackboard. Then he picks any two numbers \(a, b,\) erases them, and writes, instead, \(\abs{a-b}\). Prove that an odd number will remain at the end.
+        \end{exercise}
+    
+        \begin{exercise}
+            At first, a room is empty. Each minute, either one person enters the room or two people leave. After exactly 2,147,483,647 minutes, could the room contain 65,535 people? (commas are just for readability, not separate numbers)
+        \end{exercise}
+    
+        \begin{exercise}
+            A dragon has 100 heads. A strange knight can cut off 15, 17, 20, or 5 heads, respectively with one blow of his sword. However, the dragon has mystical regenerative powers, and it will grow back 24, 2, 14, or 17 heads, respectively, in each case. If all heads are blown off, the dragon dies. Will the dragon ever die?
+        \end{exercise}
+    
+        \begin{exercise}
+            There is a heap of 1001 stones on a table. You are allowed to perform the following operation: you choose one of the heaps containing more than one stone, throw away a stone from the heap, then divide it into two smaller (not necessarily equal) heaps. Is it possible to reach a situation in which all the heaps on the table contain exactly 3 stones by performing the operation finitely many times?
+        \end{exercise}
+
+        \begin{exercise}
+            If 127 people play in a singles tennis tournament, prove that at the end of the tournament, the number of people who have played an odd number of games is even. Would this still be true if the number of players was even?
+        \end{exercise}
+    
+        \begin{exercise}
+            Let \(a_1,a_2,\ldots,a_n\) be an arbitrary arrangement of the numbers \(1,2,\ldots,n\). Prove that if \(n\) is odd, the product
+            \[(a_1-1)(a_2-2)\cdots(a_n-n)\]
+            is an even number.
+        \end{exercise}
+    
+        \begin{exercise}
+            To a polynomial \(P(x)=ax^3+bx^2+cx+d\), of degree at most 3, one can apply two operations: (a) switch simultaneiously \(a\) and \(d\), respectively \(b\) and \(c\), (b) translate the variable \(x\) to \(x+t\), where \(t\in\bR\). Can one transform by successive application of these rules the polynomial \(P_1(x)=x^3+x^2-2x\) into \(P_2(x)=x^3-3x-2\). 
+        \end{exercise}
+    
+        \begin{exercise}[St. Petersburg City Math Olympiad 1997]
+            The number \(99\ldots99\) (having 1997 nines) is written on a blackboard. Each minute, one number written on the blackboard is factored into two factors and erased, each factor is (independently) increased or decreased by \(2\), and the resulting two numbers are written. Is it possible that at some point all of the numbers on the blackboard are equal to 9?
+        \end{exercise}
+
+        \begin{exercise}
+            Set, recursively, \((x_0,y_0)\) with \(0<x_0<y_0\) and
+            \[x_{n+1}=\frac{x_n+y_n}{2}\isp{and}y_{n+1}=\sqrt{x_{n+1}y_n}.\]
+            Moreover, we are given (although one may derive it) that
+            \[x_n<y_n\implies x_{n+1}<y_{n+1}\isp{and}y_{n+1}-x_{n+1}<\frac{y_n-x_n}{4}\text{ for all }n.\]
+            Find the common limit \(\displaystyle\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n=x=y\).
+        \end{exercise}
+    
+        \begin{exercise}[IMO 1985]
+            Consider a set of 1985 positive integers, not necessarily distinct, and none with prime factors bigger than 23. Prove that there must exist four integers in this set whose product is equal to the fourth power of an integer.
+        \end{exercise}
+    
+        \begin{exercise}
+            There are 2000 white balls in a box. There are also unlimited supplies of white, green, and red balls, initially outside the box. During each turn, we can replace two balls in the box with one or two balls as follows: two whites with a green, two reds with a green, two greens with a white and red, a white and a green with a red, or a green and red with a white. (a) After finitely many of the above operations there are three balls left in the box. Prove that at least one of them is green. (b) Is it possible that after finitely many operations only one ball is left in the box?
+        \end{exercise}
+
+\section{Math Subjects}
+
+    \subsection{Algebra}
+
+        \begin{exercise}
+            If $x+y = 4$ and $x^2 + y^2 = 3$, then find $xy$.
+        \end{exercise}
+
+        \begin{exercise}
+            If $xy=x+y = 3$, find $x^3+y^3$.
+        \end{exercise}
+
+        \begin{exercise}
+            Simplify
+            \[\left(\sqrt{5}+\sqrt{6}+\sqrt{7}\right)\left(\sqrt{5}+\sqrt{6}-\sqrt{7}\right)\left(\sqrt{5}-\sqrt{6}-\sqrt{7}\right)\left(\sqrt{5}-\sqrt{6}+\sqrt{7}\right)\]
+        \end{exercise}
+
+        \begin{exercise}
+            Given $x^2 + y^2 + z^2 = 1$, find the minimum value of $xy+xz+yz$. No calculus!
+        \end{exercise}
+
+        \begin{exercise}
+            Solve the system of equations (you don't need row reduction here!)
+            \begin{align*}
+                2x_1+x_2+x_3+x_4+x_5&=6 \\
+                x_1+2x_2+x_3+x_4+x_5&=12 \\
+                x_1+x_2+2x_3+x_4+x_5&=24 \\
+                x_1+x_2+x_3+2x_4+x_5&=48 \\
+                x_1+x_2+x_3+x_4+2x_5&=96 \\
+            \end{align*}
+        \end{exercise}
+
+        \begin{exercise}
+            How many integer solutions \((a,b)\) does \(ab-3b-2a=7\) have?
+        \end{exercise}
+
+        \begin{exercise}
+            Verify that
+            \[\sqrt[3]{20+14\sqrt{2}}+\sqrt[3]{20-14\sqrt{2}}=4\]
+        \end{exercise}
+
+        \begin{exercise}
+            If the expression 
+            \[(x^3-x^2y+xy^2+y^3)^5\] 
+            is expanded and simplified, what is the sum of all the coefficients of the resulting polynomial?
+        \end{exercise}
+
+        \begin{exercise}
+            Find all triples $x,y,z$ of integers such that 
+            \begin{equation*}
+                x^3 + y^3 + z^3 -3xyz = p
+            \end{equation*}
+            where $p$ is a prime strictly greater than 3.
+        \end{exercise}
+            
+            \begin{exercise}
+            Solve for $x$:
+            \[\sqrt[3]{x-1} + \sqrt[3]{x}  + \sqrt[3]{x+1} = 0\]
+        \end{exercise}
+            
+        \begin{exercise}
+            Suppose that $a,b,c$ are distinct real numbers. Show that 
+            \begin{equation*}
+                \sqrt[3]{a - b} + \sqrt[3]{b - c}  + \sqrt[3]{c - a} \neq 0
+            \end{equation*}
+        \end{exercise}
+            
+        \begin{exercise}
+            Show that for no positive integer $n$ can both $n+3$ and $n^2+3n+3$ be perfect cubes.
+        \end{exercise}
+            
+        \begin{exercise}
+            Prove that for any nonnegative integer $n$, the number
+            \[5^{5^{n+1}}+5^{5^n} +1\] is not prime.
+        \end{exercise}
+            
+        \begin{exercise}
+            Prove that the number
+            \[\frac{5^{125}-1}{5^{25}-1}\]
+            is not prime.
+        \end{exercise}
+
+    \subsection{Number Theory}
+
+        \begin{exercise}
+            Find the last digit of \(2^{1234}\).
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that there are infinitely  many prime numbers.
+        \end{exercise}
+
+        \begin{exercise}
+            Let \(a,b,c\) be positive real numbers with \(a+b+c=1\). Prove that
+            \[a^4 + b^4 + c^4 \geq abc.\]
+        \end{exercise}
+    
+        \begin{exercise}
+            Let \(n\) be an odd positive integer not divisible by 3. Show that \(n^2-1\) is divisible by 24.
+        \end{exercise}
+    
+        \begin{exercise}
+            A \term{palindrome} is a positive integer that reads the same forward and backward, like 2552 or 1991. 
+            Find a positive integer greater than 1 that divides all four-digit palindromes.
+        \end{exercise}
+    
+        \begin{exercise}
+            Find and integer \(c\) such that \(x^2+18x+c\) is a perfect square for all integers \(x\). 
+            Prove that this choice of \(c\) is unique. 
+        \end{exercise}
+    
+        \begin{exercise}[Due to Sun-tzu, 3rd century]
+            There are certain things whose number is unknown. 
+            If we count them by threes, we have two left over; by fives, we have three left over; and by sevens, two are left over. 
+            How many things are there?
+        \end{exercise}
+    
+        \begin{exercise}
+            Show that any two consecutive Fibonacci numbers are relatively prime. 
+            Recall that the Fibonacci numbers are defined recursively by \(F_1=F_2=1\) and \(F_n=F_{n-1}+F_{n-2}\) for \(n\geq 3\).
+        \end{exercise}
+    
+        \begin{exercise}
+            Determine whether there exist three positive integers \(a,b,c\) such that \(a+b\), \(b+c\), and \(a+c\) are all pairwise distinct prime numbers.
+        \end{exercise}
+    
+        \begin{exercise}
+            Let \(k=2020^2+2^{2020}\).
+            What is the last digit of
+            \[2^k+k^2\textrm{?}\]
+        \end{exercise}
+    
+        \begin{exercise}
+            Prove that there are infinitely many primes of the form \(4k+3\), where \(k\in\bN\).
+        \end{exercise}
+    
+        \begin{exercise}
+            Show that if \(a^2+b^2=c^2\), then \(3\mid ab\).
+        \end{exercise}
+    
+        \begin{exercise}
+            Show that the fraction \(\dfrac{21n+4}{14n+3}\) is irreducible for all positive integers \(n\).
+        \end{exercise}
+    
+        \begin{exercise}
+            Prove that the number \(n=1,280,000,401\) is composite.
+        \end{exercise}
+    
+        \begin{exercise}
+            Let \(N\) be a number with nine distinct non-zero digits, such that, for each \(k\) from 1 to 9 inclusive, the first \(k\) digits of \(N\) form a number that is divisible by \(k\). 
+            Find \(N\).
+        \end{exercise}
+        
+        \begin{exercise}
+            If $a\in \bN$ and $p$ is a prime number for which $p$ divides $(a^7-1)/(a-1)$, prove that either $p \equiv 1 \pmod{7}$ or $p=7$.
+        \end{exercise}
+        
+        \begin{exercise}
+            Find all integer solutions of the equation
+            \[\frac{a^7-1}{a-1} = b^5-1\]
+        \end{exercise}
+        
+        \begin{exercise}
+            If $a\equiv b \pmod{n}$ prove that $a^n \equiv b^n \pmod{n^2}$.
+        \end{exercise}
+        
+        \begin{exercise}
+            Let $p$ be a prime. Show that there are infinitely many positive integers $n$ such that $p$ divides $2^n-n$.
+        \end{exercise}
+        
+        \begin{exercise}
+            Let $n>1$ be a positive integer. Prove that 
+            \[1+\frac{1}{2}+\frac{1}{3}+\cdots + \frac{1}{n}\] is not an integer.
+        \end{exercise}
+
+        \begin{exercise}
+            If \(17!=355687ab8096000\), find \(a\) and \(b\).
+        \end{exercise}
+    
+        \begin{exercise}
+            Prove that every 6-digit number of the form \(abcabc\) is divisible by 7, 11, and 13.
+        \end{exercise}
+
+    \subsection{Linear Algebra}
+
+        \begin{exercise}
+            Show that if $A$, $B$ are similar square matrices ($A = QBQ^{-1}$ for some invertible matrix $Q$), then $A$ and $B$ have the same determinant.   
+        \end{exercise}
+
+        \begin{exercise}
+            Do there exist square matrices $A, B$ such that $AB - BA = I_{n}?$  
+        \end{exercise}
+        
+        \begin{exercise}
+            Show that if $A, B$ are square matrices such that $A + B = AB$, then $AB = BA$. 
+        \end{exercise}
+        
+        \begin{exercise}
+        The Fibonacci sequence $(F_{n})$ is defined by $F_{0} = 0$, $F_{1} = 1$, $F_{n} = F_{n - 1} + F_{n - 2}$. Prove that 
+        \[\begin{bmatrix}
+            1&1\\
+            1&0\\
+        \end{bmatrix}^{n} = \begin{bmatrix}
+            F_{n + 1}&F_{n}\\
+            F_{n}&F_{n - 1}\\
+            \end{bmatrix}.
+        \]
+        \end{exercise}
+        
+        \begin{exercise}
+        Show that 
+        \[F_{n + 1}F_{n - 1} - F_{n}^{2} = (-1)^{n} \hspace*{3mm} \text{for } n \geq 1. 
+        \]
+        \end{exercise}
+        
+        \begin{exercise}
+        Prove that 
+        \[
+        \det \begin{bmatrix}
+        (x^{2} + 1)^{2}&(xy + 1)^{2}&(xz + 1)^{2}\\
+        (xy + 1)^{2}&(y^{2} + 1)^{2}&(yz + 1)^{2}\\
+        (xz + 1)^{2}&(yz + 1)^{2}&(z^{2} + 1)^{2}
+        \end{bmatrix} = 2(y - z)^{2}(z - x)^{2}(x - y)^{2}.\]
+        \end{exercise}
+        
+        \begin{exercise}
+        For any $n \times n$ matrix $A$ with real entries,
+        \[
+        \det(I_{n} + A^{2}) \geq 0.
+        \]
+        \end{exercise}
+        
+        \begin{exercise}
+        (Shoelace formula) Show that if a triangle in the plane has coordinates $(x_{1}, y_{1})$, $(x_{2}, y_{2})$, and $(x_{3}, y_{3})$, then its area is the absolute value of:
+        \[\frac{1}{2} \det \begin{bmatrix}
+        x_{1}&y_{1}&1\\
+        x_{2}&y_{2}&1\\
+        x_{3}&y_{3}&1\\
+        \end{bmatrix}.
+        \]
+        \end{exercise}
+
+        \begin{exercise}
+            Let $A$ and $B$ be $n \times n$ matrices with real entries satisfying 
+            \[\Tr(A A^{T} + B B^{T}) = \Tr(AB + A^{T}B^{T}).  
+            \]
+            Prove that $A = B^{T}$. 
+            \end{exercise}
+            
+            \begin{exercise}
+                Let $A, B, C$ be $n \times n$ matrices, $n \geq 1$, satisfying 
+            \[ABC + AB + BC + AC + A + B + C = 0.
+            \]
+            Prove that $A$ and $B + C$ commute if and only if $A$ and $BC$ commute. 
+            \end{exercise}
+            
+            \begin{exercise}
+            Let $p < m$ be two positive integers. Prove that 
+            \[\det \begin{bmatrix}
+            \binom{m}{0}&\binom{m}{1}&\cdots&\binom{m}{p}\\
+            \binom{m + 1}{0}&\binom{m + 1}{1}&\cdots&\binom{m + 1}{p}\\
+            \vdots&\vdots&\ddots&\vdots\\
+            \binom{m + p}{0}&\binom{m + p}{1}&\cdots&\binom{m + p}{p} 
+            \end{bmatrix} = 1.
+            \]
+            \end{exercise}
+            
+            \begin{exercise}
+            (Vandermonde Matrices) Show that the matrix (where $x_{1}, \ldots, x_{n} \in \mathbb{R}$)
+            \[\begin{bmatrix}
+            1&1&\cdots&1\\
+            x_{1}&x_{2}&\cdots&x_{n}\\
+            x_{1}^{2}&x_{2}^{2}&\cdots&x_{n}^{2}\\
+            \vdots&\vdots&\ddots&\vdots\\
+            x_{1}^{n - 1}&x_{2}^{n - 1}&\cdots&x_{n}^{n - 1}\\
+            \end{bmatrix}
+            \]
+            is invertible if and only if $x_{i} \neq x_{j}$ whenever $i \neq j$. 
+            \end{exercise}
+
+            \begin{exercise}
+                Let $M_n$ be the $(2n+1)\times (2n+1)$ matrix for which \[(M_n)_{ij}=\begin{cases} 0 & i=j \\
+                1 & i-j=1,\dots,n \pmod{2n+1} \\ -1 & i-j=n+1,\dots,2n \pmod{2n+1}\end{cases}\] Find the rank of $M_n$.
+            \end{exercise}
+
+    \subsection{Analysis}
+
+        \begin{exercise}
+            Recall integration by parts:
+            \[ \int f\ dg = fg- \int g\ df\] Substitute $f(x)=1/x$, $g(x)=x$ to get
+            \[\int \frac{1}{x}\ dx = 1+ \int \frac{1}{x}\ dx\] and therefore $0=1$. Find the fallacy in this argument.
+        \end{exercise}
+
+        \begin{exercise}[Intermediate Value Theorem]
+            Suppose $g:[0,1]\to [0,1]$ is a continuous function. Prove that $g$ has a fixed point in $[0,1]$, i.e., some $x\in [0,1]$ such that $g(x)=x$.
+        \end{exercise}
+            
+        \begin{exercise}[Extreme Value Theorem]
+            Suppose $f$ is continuous on $[a,b]$, and assume $f(x)>0$ for all $a\leq x \leq b$. Prove that there is a positive constant $c$ for which $c\leq f(x)$ for all $x\in [a,b]$.
+        \end{exercise}
+            
+        \begin{exercise}[Rolle's Theorem]
+            Suppose $f$ is a differentiable function on $(-\infty, +\infty)$ with at least $n$ roots. Prove that $f'$ has at least $n-1$ roots.
+        \end{exercise}
+            
+        \begin{exercise}[Fundamental Theorem of Calculus]
+            Find all real-valued continuously differentiable functions on the real line such that for all $x$
+            \[(f(x))^2 = \int_0^x \left((f(t))^2 + (f'(t))^2\right)\ dt + 1990\]
+        \end{exercise}
+            
+        \begin{exercise} Let $f(x)=a_1\sin{x}+a_2\sin{2x}+\cdots + a_n\sin{nx}$, where $a_1,a_2,\dots,a_n$ are real numbers and $n$ is a positive integer. Given that $|f(x)|\leq |\sin{x}|$ for all $x$, prove that $|a_1+2a_2+\cdots+na_n|<1$.
+        \end{exercise}
+            
+        \begin{exercise}
+            Suppose $f$ is differentiable on $(-\infty, \infty)$ and that there is some constant $k<1$ for which $|f'(x)|\leq k$ for all real $x$. Prove that $f$ has a fixed point. 
+        \end{exercise}
+            
+        \begin{exercise}[A fun little integral]
+            Compute
+            \[\int_2^4 \frac{\log\sqrt{9-x}}{\log\sqrt{9-x}+\log\sqrt{x+3}}\ dx\] where $\log$ denotes the natural logarithm.
+        \end{exercise}
+
+        \begin{exercise}
+            Let $\{x_n\}$ be a sequence satisfying \[\lim_{n\to\infty} (x_n-x_{n-1}) = 0\] Prove that \[\lim_{n\to\infty} \frac{x_n}{n}= 0\]
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $\{x_n\}$ be a sequence of real numbers such that \[ \lim_{n\to\infty} (2x_{n+1}-x_n)=L\] Prove that $\{x_n\}$ converges and its limit is $L$.
+        \end{exercise}
+            
+        \begin{exercise}
+            Evaluate
+            \[1+\frac{1}{1+\frac{1}{1+\frac{1}{1+\cdots}}}\]
+            That is, compute the limit of the sequence $\{x_n\}$, where $x_1 = 1$ and $x_{n+1}=1+\frac{1}{x_n}$.
+        \end{exercise}
+            
+        \begin{exercise}
+            Compute
+            \[\lim_{n\to\infty}\left(\sum_{k=1}^n \frac{n}{k^2+n^2}\right).\]
+        \end{exercise}
+
+    \subsection{Probability}
+
+    \begin{exercise}
+        On average, one in five Martians is a compulsive liar, and the rest always tell the truth.
+        It rains \(30\%\) of the time on Mars.
+        If three randomly chosen Martians tell Astronaut Mike Dexter that it is raining, then what is the probability that it is actually raining?
+    \end{exercise}
+
+    \begin{exercise}[Monty Hall Problem]
+        Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. 
+        You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. 
+        He then says to you, ``Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+    \end{exercise}
+
+    \begin{exercise}[Birthday Problem]
+        Assume there are 365 days in the year and the chance of being born on a given day is the same for each day.
+        What is the probability that in a room of 23 people, some pair of people have the same birthday?
+        Feel free to use a calculator for this one.
+        More generally, find the same probability for a room of \(n\) people.
+    \end{exercise}
+
+    \begin{exercise}[2014 AIME, Problem 2]
+        An urn contains 4 green balls and 6 blue balls.
+        A second urn contains 16 green balls and \(N\) blue balls.
+        A single ball is drawn at random from each urn.
+        The probability that both balls are of the same color is \(0.58\).
+        Find \(N\).
+    \end{exercise}
+
+    \begin{exercise}
+        One hundred people line up to board an airplane. 
+        Each has a boarding pass with assigned seat. 
+        However, the first person to board has lost his boarding pass and takes a random seat. 
+        After that, each person takes the assigned seat if it is unoccupied, and one of unoccupied seats at random otherwise. 
+        What is the probability that the last person to board gets to sit in his assigned seat?
+    \end{exercise}
+
+    \begin{exercise}
+        Emmy writes down fifteen 1's in a row and randomly writes \(+\) or \(-\) between each pair of consecutive 1's.
+        One such example is
+        \[1+1+1-1-1+1-1+1-1+1-1-1-1+1+1.\]
+        What is the probability that the value of the expression Emmy wrote down is 7?
+    \end{exercise}
+    
+    \begin{exercise}
+        Given \(n\) points drawn randomly on the circumference of a circle, what is the probability that they all lie on the same semicircle?
+    \end{exercise}
+
+    \begin{exercise}
+        An unfair coin has a \(2/3\) probability of turning up heads. If this coin is tossed \(50\) times, what is the probability that the total number of heads is even?
+    \end{exercise}
+
+    \begin{exercise}
+        The temperatures in Chicago and Detroit are \(x^\circ\) and \(y^\circ\), respectively.
+        These temperatures are not assumed independent; namely we are given the following:
+        \begin{enumerate}
+            \item \(P(x^\circ=70^\circ)=a\), the probability that the temperature in Chicago is \(70^\circ\),
+            \item \(P(y^\circ=70^\circ)=b\), and
+            \item \(P(\max(x^\circ,y^\circ)=70^\circ)=c\).
+        \end{enumerate}
+        Determine \(P(\min(x^\circ,y^\circ)=70^\circ)\) in terms of \(a\), \(b\), and \(c\).
+    \end{exercise}
+
+    \begin{exercise}
+        Mr. Knuth works on the \(13^{\text{th}}\) floor of a 15-floor building.
+        The only elevator moves continuously through floors 1, 2,\dots, 15, 14,\dots, 2, 1, 2,\dots, except that it stops on a floor on which the button has been pressed.
+        Assume the time spent loading and unloading passengers is negligible.
+
+        Mr. Knuth complains that at 5pm, when he wants to go home, the elevator almost always goes up when it stops on his floor.
+        What is the explanation for this?
+
+        Now assume that the building has \(n\) elevators which move independently as previously described.
+        Compute the proportion of time the first elevator on Mr. Knuth's floor moves up.
+    \end{exercise}
+    
+    \begin{exercise}
+        What is the probability that the sum of two randomly chosen numbers in the interval \([0,1]\) does not exceed 1 and their product does not exceed \(\frac29\)?
+    \end{exercise}
+
+    \begin{exercise}
+        Prove the identity
+        \[1+\frac{n}{m+n-1}+\cdots+\frac{n(n-1)\cdots 1}{(m+n-1)(m+n-2)\cdots m}=\frac{m+n}{m}.\]
+        (ideally using probabilistic methods)
+    \end{exercise}
+
+    \subsection{Planar Geometry}
+
+        \begin{exercise}
+            Prove the Pythagorean Theorem. How do you tell whether a triangle is acute, right, or obtuse?  
+        \end{exercise}
+
+        \begin{exercise}
+            Prove that the midpoints of the sides of a quadrilateral form a parallelogram.
+        \end{exercise}
+        
+        \begin{exercise}
+            In triangle $ABC$, $AB = 13$, $BC = 14$, and $CA = 15$. Distinct points $D, E,$ and $F$ lie on segments $BC, CA,$ and $DE$, respectively, such that $AD \perp BC$, $DE \perp AC$, and $AF \perp BF$. The length of segment $DF$ can be written as $mn$ , where $m$ and $n$ are relatively prime positive integers. What is $m + n$?
+        \end{exercise}
+        
+        \begin{exercise}
+            A straight line cuts the asymptotes of a hyperbola in points $A$ and $B$ and the curve in points $P$ and $Q$. Prove that $AP = BQ$.   
+        \end{exercise}
+
+        \begin{exercise}
+            Let $ABCD$ be a convex quadrilateral, and define $P_1, P_2, P_3, P_4, P_5,$ and $P_6$ to be the midpoints of line segments $AB, BC, CD, DA, AC,$ and $BD$ respectively. Prove that lines $P_{1}P_{3}$, $P_{2}P_{4}$, and $P_{5}P_{6}$ all intersect in a single point.
+        \end{exercise}
+
+        \begin{exercise}
+            A convex quadrilateral $ABCD$ is inscribed in a circle with center $O$. The diagonals $AC, BD$ of $ABCD$ meet at $P$. Circumcircles of $ABP$ and $CDP$ meet at $P$ and $Q$ ($O, P, Q$ are pairwise distinct). Show that the angle of $OQP$ is $90^{\circ}$. 
+        \end{exercise}
+
+        \begin{exercise}
+            Acute-angled triangle $ABC$ is inscribed into circle $\Omega$. Lines tangent to $\Omega$ at $B$ and $C$ intersect at $P$. Points $D$ and $E$ are on $AB$ and $AC$ such that $PD$ and $PE$ are perpendicular to $AB$ and $AC$ respectively. Prove that the orthocenter of triangle $ADE$ is the midpoint of $BC$.
+        \end{exercise}
+
+    \subsection{Graph Theory}
+
+        \begin{exercise}
+        If a graph has $5$ vertices, can each vertex has degree $3$? 
+        \end{exercise}
+        
+        \begin{exercise}
+        At a dinner party people shake hands as they are introduced. Not everyone shakes hands with everyone else (some of them already know each other!). Show that there have to be two people who shake hands the same number of times. Show that the number of people who have shaken hands an odd number of times is even.
+        \end{exercise}
+        
+        \begin{exercise}
+        Let $G$ be a disconnected graph. Show that $\overline{G}$ is a connected graph.
+        \end{exercise}
+        
+        \begin{exercise}
+        Characterize (with proof!) all graphs whose vertices have degree less than or equal to $2$.
+        \end{exercise}
+        
+        \begin{exercise}
+        A tree $T$ is a connected acyclic graph. A vertex of degree $1$ in $T$ is called a leaf. Show that if $T$ has at least two vertices, then it has at least two leafs.  
+        \end{exercise}
+        
+        \begin{exercise}
+        Suppose that $G$ only has cycles of even length. Show that $\chi(G) = 2$.
+        \end{exercise}
+        
+        \begin{exercise}
+        Suppose a simple planar graph $G$ has $n \geq 3$ vertices. Prove that $G$ has at most $3n - 6$ edges. 
+        \end{exercise}
+        
+        \begin{exercise}
+        Show that if the points of the plane are colored black or white, then there exists an equilateral triangle whose vertices are colored by the same color.
+        \end{exercise}
+        
+        \begin{exercise}
+        Let $G$ be a graph with $n$ vertices and $m$ edges. Prove that the graph contains at least $\frac{4m}{3n}(m - \frac{n^{2}}{4})$ $3$-cycles.
+        \end{exercise}
+        
+        \begin{exercise}
+        Let $n$ be a positive integer. A test has $n$ problems, and was written by several students. Exactly three students solved each problem, each pair of problems has exactly one student that solved both and no student solved every problem. Find the maximum possible value of $n$.
+        \end{exercise}
+        
+        \begin{exercise}
+        $A$ is a champion if for every other person $B$, either $A$ beats $B$, or $A$ beats some person $C$ who beats $B$. Describe all integers $n$ for which there exists an tournament of size $n$ in which every player is a champion.
+        \end{exercise}
+        
+        \begin{exercise}
+        $20$ football teams take part in a tournament. On the first day all the teams play one match. On the second day all the teams play a further match. Prove that after the second day it is possible to select $10$ teams, so that no two of them have yet played each other.
+        \end{exercise}
+        
+        \begin{exercise}(Turan's Theorem)
+        Given a graph $G$, a clique in $G$ is a subset of vertices of $G$ where every pair of vertices in the subset is joined by an edge. Now, let $G$ be a graph on $n$ vertices and $m$ is a positive integer with $2 \leq m \leq n$. Suppose $G$ does not contain a clique of size $m$. Prove that the number of edges in $G$ is at most 
+        \[\frac{n^{2}}{2}\left(1 - \frac{1}{m - 1}\right).\]
+        \end{exercise}
+        
+        \begin{exercise}
+        Let $n$ be a positive integer. For a set $S$ of $2n$ real numbers, find the maximum possible number of pairwise (positive) differences between two elements in $S$, that are in the range $(1, 2)$.
+        \end{exercise}
+        
+        \begin{exercise}(IMO 1991)
+        Let $G$ be a connected graph with $m$ edges. Prove that the edges can be labelled with the positive integers $1, 2, \ldots, m$ such that for each vertex with degree at least two, the greatest common divisors amongst the labels on the edges incident to this vertex, is $1$.
+        \end{exercise}
+
+    \subsection{Combinatorics}
+
+        \begin{exercise}
+            Students go for ice cream in groups of at least two. After $k>1$ students have gone, every two students have gone together exactly once. Prove that the total number of students in the school is $\leq k$.
+        \end{exercise}
+
+        \begin{exercise}[Fisher's Inequality]
+            Let $A_1,\dots,A_m$ be distinct subsets of $\{1,2,\dots,n\}$. Suppose that there is an integer $1\leq k< n$ such that $|A_i\cap A_j|=k$ for all $i\neq j$. Prove that $m\leq n$.
+        \end{exercise}
+            
+        \begin{exercise}
+            A handbook classifies plants by $100$ attributes (each plant either has a given attribute or does not have it). Two plants are dissimilar if they differ in at least $51$ attributes. Show that the handbook cannot give $51$ plants all dissimilar from each other.
+        \end{exercise}
+            
+        \begin{exercise}
+            Is there in the plane a configuration of $22$ circles and $22$ points on their union such that any circle contains at least $7$ points and any point belongs to at least $7$ circles?
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $G$ be a finite simple graph, and there is a light bulb at each vertex of $G$. Initially, all lights are off. Each step we are allowed to choose a vertex and toggle the light at that vertex as well as those of its neighbors. Show that we can get all lights to be on at the same time.
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $G$ be a graph with $v$ vertices. Let $f(n)$ denote the number of closed walks in $G$ of length $n$. Show that there exist complex numbers $\lambda_1,\lambda_2,\dots,\lambda_v$ such that
+            \[f(n)=\lambda_1^n+\lambda_2^n+\cdots +\lambda_v^n\] for all positive integers $n$. 
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $a_1,a_2,\dots,a_n$ be integers. Show that
+            \[\prod_{1\leq i<j\leq n}\frac{a_i-a_j}{i-j}\] is an integer.
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $a_1,a_2,\dots,a_{2n+1}$ be real numbers such that for any $1\leq i \leq 2n+1$, we can remove $a_i$ and separate the remaining $2n$ numbers into two groups of $n$ numbers with equal sums. Prove that $a_1=a_2=\cdots=a_{2n+1}$.
+        \end{exercise}
+
+        \begin{exercise}
+            Let $G$ be the complete graph on $n$ vertices, where $n$ and $k$ are positive integers that satisfy
+            \[\binom{n}{k}2^{1-k}<1
+            \] Prove that there exists a $2$-coloring of the edges of $G$ with no monochromatic clique of size $k$. Recall that a clique of size \(k\) is a complete subgraph with \(k\) vertices.
+        \end{exercise}
+            
+        \begin{exercise}
+            Suppose that $n$ basketball teams compete in a tournament and any two teams play each other exactly once. The organizers wish to award $k$ prizes at the end of the tournament. It would be embarrassing if there ended up being a team that had not won a prize despite beating all the teams that won a prize. Prove that if
+            \[\binom{n}{k}\left(1-\frac{1}{2^k}\right)^{n-k}<1\] then it is possible that for every choice of $k$ teams, there will be a team which beats them all (in which case embarrassment is guaranteed).
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $v_1,\dots,v_n\in \bR^n$, all $\abs{v_i}=1$. Prove that there exist $\eps_1,\eps_2,\dots,\eps_n\in \{-1,1\}$ such that 
+            \[|\eps_1v_1+\cdots+\eps_nv_n|\leq \sqrt{n}\]
+            and there exist $\eps_1,\eps_2,\dots,\eps_n\in \{-1,1\}$ such that
+            \[|\eps_1v_1+\cdots+\eps_nv_n|\geq \sqrt{n}\]
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $F$ be a finite collection of binary strings of finite lengths and assume no member of $F$ is a prefix of another. Let $N_i$ denote the number of strings of length $i$ in $F$. Prove that \[\sum_i \frac{N_i}{2^i}\leq 1\]
+        \end{exercise}
+            
+        \begin{exercise}
+            Let $n>2$. Prove that there exists an $n\times n$ matrix with entries in $\{\pm 1\}$ whose determinant is larger than $\sqrt{n!}$.
+        \end{exercise}
+            
+        \begin{exercise}
+            Prove that there is an absolute constant $c>0$ with the following property. Let $A$ be an $n$ by $n$ matrix with pairwise distinct entries. Then there is a permutation of rows in $A$ such that no column in the permuted matrix contains an increasing subsequence of length at least $c\sqrt{n}$.
+        \end{exercise}
+
+\section{Miscellaneous Topics}
+
+    \subsection{Recreational Mathematics}
+
+    \begin{exercise}[Green-eyed dragons]
+        You visit a remote desert island inhabited by one hundred very friendly dragons, all of whom have green eyes. They haven’t seen a human for many centuries and are very excited about your visit. They show you around their island and tell you all about their dragon way of life (dragons can talk, of course).
+    
+        They seem to be quite normal, as far as dragons go, but then you find out something rather odd. They have a rule on the island that states that if a dragon ever finds out that he/she has green eyes, then at precisely midnight at the end of the day of this discovery, he/she must relinquish all dragon powers and transform into a long-tailed sparrow. However, there are no mirrors on the island, and the dragons never talk about eye color, so they have been living in blissful ignorance throughout the ages.
+
+        Upon your departure, all the dragons get together to see you off, and in a tearful farewell you thank them for being such hospitable dragons. You then decide to tell them something that they all already know (for each can see the colors of the eyes of all the other dragons): You tell them all that at least one of them has green eyes. Then you leave, not thinking of the consequences (if any). Assuming that the dragons are (of course) infallibly logical, what happens? If something interesting does happen, what exactly is the new information you gave the dragons?
+    \end{exercise}
+    
+    \begin{exercise}[The Unexpected Hanging Paradox]
+        A prisoner is told that he will be hanged on some day between Monday and Friday, but that he will not know on which day the hanging will occur before it happens. He cannot be hanged on Friday, because if he were still alive on Thursday, he would know that the hanging will occur on Friday, but he has been told he will not know the day of his hanging in advance. He cannot be hanged Thursday for the same reason, and the same argument shows that he cannot be hanged on any other day. Nevertheless, the executioner unexpectedly arrives on Wednesday, surprising the prisoner. What is wrong with the prisoner's argument?
+    \end{exercise}
+
+    \begin{exercise}
+        An ant starts to crawl along a taut rubber rope 1 km long at a speed of 1 cm per second (relative to the rubber it is crawling on). At the same time, the rope starts to stretch uniformly at a constant rate of 1 km per second, so that after 1 second it is 2 km long, after 2 seconds it is 3 km long, etc. Will the ant ever reach the end of the rope?
+    \end{exercise}
+
+    \begin{exercise}[Four fours]
+        Pick your favorite integer \(x\). Using exactly four 4's and the operators \(+\), \(\times\), \(-\), \(\div\), brackets, decimals, roots, exponents, factorials, and concatenation, form your integer \(x\). Four example, 
+        \[5 = \frac{4\times 4 + 4}{4}\quad\text{and}\quad 16 = .4\times (44-4).\]
+        Now include logarithms of a specified base. Prove that you can write any integer \(n\) using the above and logarithms in a systematic way. (a ``nice'' formula).
+    \end{exercise}
+    
+    \begin{exercise}
+        Two missiles speed directly toward each other, one at 9,000 miles per hour and the other at 21,000 miles per hour. They start at 4,857 miles apart. Without using pencil and paper (or similar tools), calculate how far apart they are one minute before they collide.
+    \end{exercise}
+    
+    \begin{exercise}
+        Mr. Smith planned to drive from Chicago to Detroit, then back again. He wanted to average 60 miles an hour for the entire round trip. After arriving in Detroit, he found that his average speed for the trip was only 30 miles an hour. What must Smith's average speed be on the return trip in order to raise his average for the round trip to 60 miles an hour? Recall that average speed is defined by the total distance travelled divided by the total time taken.
+    \end{exercise}
+    
+    \begin{exercise}
+        You are sitting in a rowboat on a small lake. You have a brick in your boat. You toss the brick out of your boat and into the lake, where it quickly sinks to the bottom. Does the water level rise slightly, drop slightly, or stay the same?
+    \end{exercise}
+    
+    \begin{exercise}
+        You are lost in the jungles of Brazil. After days of wandering, your food supplies dwindle, and you make a fatal mistake by eating a poisonous mushroom. You can feel the poison coursing through your veins, sure that you will collapse any second. But there is hope. The antidote to the poison is secreted by a certain species of frog found in this rainforest, and you can save yourself by licking one of these frogs. But, only the female frogs secret the antidote you need. The male and female frogs look identical, and they occur in equal numbers across the population. The only distinguishing feature is that the male frogs have a unique croak.
+
+        As your vision starts to blur, you look up and see one of these frogs sitting on a stump in front of you. You are about to make a mad dash to the frog, praying that it is female, when you hear the male frog's distinctive croak behind you. You turn around and see that there are two frogs on the grass in a clearing, just about as far away from you as the one on the stump. You do not know which one of the two frogs in the clearing croaked.
+
+        You only have time to reach the one frog on the stump, or the two frogs in the clearing (one of which croaked) before you pass out. Should you dash to the stump and lick the one frog, or into the clearing and lick the two?
+    \end{exercise}
+    
+    \begin{exercise}[The game of Nim]
+        Determine the best strategy for each player in the following two-player game. There are three piles, each of which contains some number of coins. Players alternate turns, each turn consisting of removing any (non-zero) number of coins from a single pile. The player who removes the last coin(s) wins.
+    \end{exercise}
+
+    \begin{exercise}
+        Bottle $A$ contains a quart of milk and bottle $B$ contains a quart of black coffee. Pour a small amount from $B$ into $A$, mix well, and then pour back from $A$ into $B$ until both bottles again each contain a quart of liquid. What is the relationship between the fraction of the coffee in $A$ and the fraction of milk in $B$?
+    \end{exercise}
+        
+    \begin{exercise}
+        Define $f(x)=1/(1-x)$ and denote $r$ iterations of the function $f$ by $f^r$, so \[f^r(x)=\underbrace{f(f(\cdots(f(x))\cdots))}_{r\text{ $f$'s}} \] Determine $f^{1999}(2000)$.
+    \end{exercise}
+        
+    \begin{exercise}
+        Find the minimum value of $(u-v)^2+(\sqrt{2-u^2}-\frac{9}{v})^2$ for $0<u<\sqrt{2}$ and $v>0$.
+    \end{exercise}
+        
+    \begin{exercise}
+        One morning it started snowing at a heavy and constant rate. A snowplow started at 8:00 A.M. At 9:00 A.M. it had gone $2$ miles. By 10:00 A.M. it had gone $3$ miles. Assuming the snowplow removes a constant volume of snow per hour, determine the time at which it started snowing.
+    \end{exercise}
+
+    \begin{exercise}
+        You have an equal-arm balance scale and twelve solid balls. You are told that one of the balls has a different weight from all the others, but you do not know whether it is lighter or heavier. You can weigh the balls against each other in the scale balance. Can you find the odd ball and tell if it is lighter or heavier in only three weighings?
+    \end{exercise}
+
+    \begin{exercise}
+        Let $S$ be a finite set of at least two points in the plane. Assume that no three points of $S$ are collinear. A windmill is a process that starts with a line $\ell$ going through a single point $P \in S$. The line rotates clockwise about the pivot $P$ until the first time that the line meets some other point $Q$ belonging to $S$. This point $Q$ takes over as the new pivot, and the line now rotates clockwise about $Q$, until it next meets a point of $S$. This process continues indefinitely. Show that we can choose a point $P$ in $S$ and a line $\ell$ going through $P$ such that the resulting windmill uses each point of $S$ as a pivot infinitely many times.
+    \end{exercise}
+
+    \subsection{Putnam Problems}
+
+    \begin{exercise}[1968 A1]
+        Prove that
+        \[\frac{22}{7}-\pi = \int_0^1\frac{x^4(1-x)^4}{1+x^2}\ dx.\]
+    \end{exercise}
+
+    \begin{exercise}[1977 A2]
+        Determine all solutions in real numbers $x,y,z,w$ of the system
+        \begin{align*}
+            x+y+z&= w \\
+            \frac{1}{x}+\frac{
+            1}{y}+\frac{1}{z} &= \frac{1}{w}
+        \end{align*}
+    \end{exercise}
+
+    \begin{exercise}[1979 A4]
+        Let $A$ be a set of $2n$ points in the plane, no three of which are collinear. Suppose that $n$ of them are colored red, and the remaining $n$ blue. Prove or disprove: there are n straight line segments, no two with a point in common, such that the endpoints of each segment are points of $A$ having different colors. 
+    \end{exercise}
+
+    \begin{exercise}[1983 A2]
+        The hands of an accurate clock have lengths $3$ and $4$. Find the distance between the tips of the hands when that distance is increasing most rapidly.
+    \end{exercise}
+
+    \begin{exercise}[1984 A1]
+        Let $A$ be a solid $a\times b\times c $ rectangular brick in three dimensions, where $a,b,c>0$. Let $B$ be the set of all points which are a distance at most one from some point of $A$ (in particular, $B$ contains $A$). Express the volume of $B$ as a polynomial in $a$, $b$, and $c$.
+    \end{exercise}
+
+    \begin{exercise}[1985 B6]
+        Let $G$ be a finite set of real $n \times n$ matrices $\{M_i\}$, $1 \leqslant i \leqslant r$, which form a group under matrix multiplication. Suppose that $\sum_{i=1}^r \Tr (M_i) = 0$, where $\Tr (A)$ denotes the trace of the matrix $A$. Prove that $\sum_{i=1}^r M_i$ is the $n \times n$ zero matrix.
+    \end{exercise}
+
+    \begin{exercise}[1988 A6]
+        If a linear transformation $A$ on an $n$-dimensional vector space has $n+1$ eigenvectors such that any $n$ of them are linearly independent, does it follow that $A$ is a scalar multiple of the identity? Prove your answer.  
+    \end{exercise}
+
+    \begin{exercise}[1989 A2]
+        Evaluate $\int_0^a \int_0^b e^{\max\{b^2x^2,a^2y^2\}}\ dy\ dx$, where $a,b>0$.
+    \end{exercise}
+
+    \begin{exercise}[1990 A5]
+        If $A$ and $B$ are square matrices of the same size such that $ABAB = 0$, does it follow that $BABA = 0$?
+    \end{exercise}
+
+    \begin{exercise}[1990 B2]
+        Prove that for all $|x|<1$, $|z|>1$, 
+        \[1+\sum_{j=1}^\infty (1+x^j)\frac{(1-z)(1-zx)(1-zx^2)\cdots(1-zx^{j-1})}{(z-x)(z-x^2)(z-x^3)\cdots(z-x^j)} = 0\]
+    \end{exercise}
+
+    \begin{exercise}[1991 A2]
+        Let $A$ and $B$ be different $n \times n$ matrices with real entries. If $A^{3}$ = $B^{3}$ and $A^{2}B = B^{2}A$, can $A^{2} + B^{2}$ be invertible?
+    \end{exercise}
+
+    \begin{exercise}[1992 A2]
+        Define $C(\alpha)$ to be the coefficient of $x^{1992}$ in the power series expansion about $x=0$ of $(1+x)^\alpha$. Evaluate
+        \[\int_0^1 C(-y-1)\left(\frac{1}{y+1}+\frac{1}{y+2}+\frac{1}{y+3}+\cdots + \frac{1}{y+1992}\right)\ dy\]
+    \end{exercise}
+
+    \begin{exercise}[1992 A4]
+        Let $f$ be an infinitely differentiable real-valued function defined on the real numbers. If \[f\left(\frac{1}{n}\right) =\frac{n^2}{n^2+1}\] for $n=1,2,3,\cdots$, compute the values of the derivatives $f^{(k)}(0)$.
+    \end{exercise}
+
+    \begin{exercise}[1993 A4]
+        Let $x_1,x_2,\dots,x_{19}$ be positive integers each of which is less than or equal to $93$. Let $y_1,y_2,\dots,y_{93}$ be positive integers each of which is less than $19$. Prove that there exists a (nonempty) sum of some $x_{i}$'s equal to a sum of some $y_j$'s.
+    \end{exercise}
+
+    \begin{exercise}[1993 B3]
+        Two real numbers \(x\) and \(y\) are chosen at random in the interval \((0,1)\) with respect to the uniform distribution.
+        What is the probability that the closest integer to \(x/y\) is even? 
+        Express your answer in the form \(r+s\pi\), where \(r,s\in\bQ\).
+    \end{exercise}
+
+    \begin{exercise}[1993 B4]
+        The function $K(x,y)$ is positive and continuous for $0\leqslant x \leqslant 1$, $0\leqslant y \leqslant 1$, and the functions $f(x)$ and $g(x)$ are positive and continuous for $0\leqslant x \leqslant 1$. Suppose that for all $x$, $0\leqslant x \leqslant 1$,
+        \[\int_0^1f(y)K(x,y)\ dy = g(x)\ \ \text{ and }\ \ \int_0^1 g(y)K(x,y)\ dy = f(x)\] Show that $f(x)=g(x)$ for $0\leqslant x \leqslant 1$. 
+    \end{exercise}
+        
+    \begin{exercise}[1993 B5]
+        Show that there do not exist four points in the Euclidean plane such that the pairwise distances between the points are all odd integers. 
+    \end{exercise}
+
+    \begin{exercise}[1994 A3]
+        Show that if the points of an isosceles right triangle of side length $1$ are each colored with one of four colors, then there must be two points of the same color which are at least a distance $2-\sqrt{2}$ apart. 
+    \end{exercise}
+
+    \begin{exercise}[1994 B1]
+        Find all positive integers that are within $250$ of exactly $15$ perfect squares.
+    \end{exercise}
+        
+    \begin{exercise}[1994 B2]
+        For which real numbers $c$ is there a straight line that intersects $y=x^4+9x^3+cx^2+9x+4$ in four distinct points?
+    \end{exercise}
+
+    \begin{exercise}[1995 A4]
+        Suppose we have a necklace of $n$ beads. Each bead is labeled with an integer and the sum of all these labels is $n - 1$. Prove that we can cut the necklace to form a string whose consecutive labels $x_1,x_2, \ldots, x_n$ satisfy
+        \[\sum_{i = 1}^{k} x_{i} \leq k - 1 \quad \text{for $k = 1, 2, \ldots, n$}.\]
+    \end{exercise}
+
+    \begin{exercise}[1995 B4]
+        Evaluate
+        \[\sqrt[8]{2207 - \frac{1}{2207-\frac{1}{2207-\cdots}}}\] and express your answer in the form $\frac{a+b\sqrt{c}}{d}$ where $a$, $b$, $c$, and $d$ are integers.
+    \end{exercise}
+
+    \begin{exercise}[1997 A4]
+        Let $G$ be a group with identity $e$ and $\phi: G \rightarrow G$ a function such that 
+        \[\phi(g_{1})\phi(g_{2})\phi(g_{3}) = \phi(h_{1})\phi(h_{2})\phi(h_{3})
+        \]
+        whenever $g_{1}g_{2}g_{3} = e = h_{1}h_{2}h_{3}$. Prove that there exists an element $a \in G$ such that $\psi(x) = a\phi(x)$ is a homomorphism. 
+    \end{exercise}
+
+    \begin{exercise}[1998 B2]
+        Given a point $(a, b)$ with $0 < b < a$, determine the minimum perimeter of a triangle with one vertex at $(a, b)$, one on the $x$-axis, and one on the line $y = x$. You may assume that a triangle of minimum perimeter exists.
+    \end{exercise}
+
+    \begin{exercise}[1998 B5]
+        Let $N$ be the positive integer with $1998$ decimal digits, all of them $1$; that is, \[N=1111\cdots 1\] Find the thousandth digit after the decimal point of $\sqrt{N}$.
+    \end{exercise}
+
+    \begin{exercise}[1999 A5]
+        Prove that there is a constant $C$ such that, if $p(x)$ is a polynomial of degree $1999$, then
+        \[|p(0)|\leqslant C\int_{-1}^1 |p(x)|\ dx\]
+    \end{exercise}
+
+    \begin{exercise}[1999 B5]
+        For an integer $n\geqslant 3$, let $\theta = 2\pi / n$. Evaluate the determinant of the $n\times n$ matrix $I+A$, where $I$ is the $n\times n$ identity matrix and $A=(a_{jk})$ has entries $a_{jk} = \cos(j\theta+k\theta)$ for all $j,k$. 
+    \end{exercise}
+
+    \begin{exercise}[2000 A2]
+        Prove that there exist infinitely many positive integers \(n\) such that \(n\), \(n+1\), and \(n+2\) are each the sum of the squares of two integers.
+    \end{exercise}
+
+    \begin{exercise}[2000 A5]
+        Three distinct points with integer coordinates lie on a circle of radius $r>0$. Show that two of these points are separated by a distance of at least $r^{1/3}$.
+    \end{exercise}
+
+    \begin{exercise}[2000 B2]
+        Prove that the expression
+        \[\frac{\gcd(m,n)}{n}\binom{n}{m}\]
+        is an integer for all pairs of integers \(n\geq m\geq 1\).
+    \end{exercise}
+
+    \begin{exercise}[2000 B4]
+        Let $f(x)$ be a continuous function such that $f(2x^{2} - 1) = 2xf(x)$ for all $x$. Show that $f(x) = 0$ for $-1 \leq x \leq 1$. 
+    \end{exercise}
+
+    \begin{exercise}[2001 A2]
+        You have coins \(C_1,\ldots,C_n\).
+        For each \(k\), coin \(C_k\) is biased so that, when tossed, it has probability \(1/(2k+1)\) of falling heads.
+        If the \(n\) coins are tossed, what is the probability that the number of heads is odd?
+        Express your answer as a rational function of \(n\).
+    \end{exercise}
+
+    \begin{exercise}[2002 A1]
+        Given any five points on a sphere, show that some four of them must lie on a closed hemisphere.
+    \end{exercise}
+
+    \begin{exercise}[2002 A3]
+        Let $n\geqslant 2$ be an integer and $T_n$ be the number of non-empty subsets $S$ of $\{1, 2, 3, \dots, n\}$ with the property that the average of the elements of $S$ is an integer. Prove that $T_n - n$ is always even.
+    \end{exercise}
+
+    \begin{exercise}[2002 B1]
+        Shanille O'Keal shoots free throws on a basketball court.
+        She hits the first and misses the second, and thereafter the probability that she hits the next shot is equal to the proportion of shots she has hit so far.
+        What is the probability that she hits exactly 50 of her first 100 shots?
+    \end{exercise}
+
+    \begin{exercise}[2004 A5]
+        An \(m\times n\) checkerboard is colored randomly: each square is independently assigned red or black with probability \(1/2\).
+        We say that two squares \(p\) and \(q\) are in the same connected monochromatic region if there is a sequence of squares, all of the same color, starting at \(p\) and ending at \(q\), in which successive squares in the sequence share a common side.
+        SHow that the expected number of monochromatic regions is greater than \(mn/8\).
+    \end{exercise}
+
+    \begin{exercise}[2004 B2]
+        Let \(m\) and \(n\) be positive integers.
+        Show that
+        \[\frac{(m+n)!}{(m+n)^{m+n}}<\frac{m!}{m^m}\frac{n!}{n^n}\]
+    \end{exercise}
+
+    \begin{exercise}[2006 B2]
+        Prove that, for every set \(X=\{x_1,x_2,\ldots,x_n\}\) of \(n\) real numbers, there exists a nonempty subset \(S\) of \(X\) and an integer \(m\) such that
+        \[\abs{m+\sum_{s\in S}s}\leq \frac{1}{n+1}.\]
+    \end{exercise}
+
+    \begin{exercise}[2007 A5]
+        Suppose that a finite group $G$ has exactly $n$ elements of order $p$, where $p$ is a prime. Prove that either $n=0$ or $p$ divides $n+1$. 
+    \end{exercise}
+
+    \begin{exercise}[2007 B1]
+        Let $f$ be a nonconstant polynomial with positive integer coefficients. Prove that if $n$ is a positive integer, then $f(n)$ divides $f(f(n)+1)$ if and only if $n=1$.
+    \end{exercise}
+    
+    \begin{exercise}[2008 A1]
+        Let \(f:\bR^2\to\bR\) be a function such that \(f(x,y)+f(y,z)+f(z,x)=0\) for all real numbers \(x\), \(y\), and \(z\).
+        Prove that there exists a function \(g:\bR\to\bR\) such that \(f(x,y)=g(x)-g(y)\) for all real numbers \(x\) and \(y\).
+    \end{exercise}
+
+    \begin{exercise}[2008 A3]
+        Start with a finite sequence $a_1,a_2,\dots,a_n$ of positive integers. If possible, choose two indices $j < k$ such that $a_j$ does not divide $a_k$, and replace $a_j$ and $a_k$ by $\gcd(a_j , a_k )$ and $\lcm(a_j , a_k )$, respectively. Prove that if this process is repeated, it must eventually stop and the final sequence does not depend on the choices made. (Note: $\gcd$ means greatest common divisor and $\lcm$ means least common multiple.)
+    \end{exercise}
+
+    \begin{exercise}[2009 B1]
+        Show that every positive rational number can be written as a quotient of products of factorials of (not necessarily distinct) primes.
+        For example,
+        \[\frac{10}{9} = \frac{2!\cdot 5!}{3!\cdot 3!\cdot 3!}.\]
+    \end{exercise}
+
+    \begin{exercise}[2010 B2]
+        Given $A$, $B$, and $C$ are noncollinear points in the plane with integer coordinates such that the distances $AB$, $AC$, and $BC$ are integers, what is the smallest possible value of $AB$?
+    \end{exercise}
+
+    \begin{exercise}[2011 A4]
+        For which positive integers $n$ is there an $n \times n$ matrix with integer entries such that every dot product of a row with itself is even, while every dot product of two different rows is odd?
+    \end{exercise}
+
+    \begin{exercise}[2011 A6]
+        Let \(G\) be an abelian group with \(n\) elements, and let
+        \[\{g_1=e,g_2,\ldots,g_k\}\subseteq G\]
+        be a (not necessarily minimal) set of distinct generators of \(G\).
+        A special die, which randomly selects one of the elements \(g_1,\ldots,g_k\) with equal probability, is rolled \(m\) times and the selected elements are multiplied to produce an element \(g\in G\).
+        Prove that there exists a real number \(b\in(0,1)\) such that
+        \[\lim_{m\to\infty}\frac{1}{b^{2m}}\left(\textrm{Prob}(g=x)-\frac{1}{n}\right)^2\]
+        is positive and finite.
+    \end{exercise}
+
+    \begin{exercise}[2012 A1]
+        Let $d_{1}, d_{2}, \ldots, d_{12}$ be real numbers in the open interval $(1, 12)$. Show that there exist distinct indices $i, j, k$ such that $d_{i}$,$d_{j},d_{k}$ are the side lengths of an acute triangle.
+    \end{exercise}
+
+    \begin{exercise}[2012 A2]
+        Let $*$ be a commutative and associative binary operation on a set $S$. Assume that for every $x$ and $y$ in $S$, there exists $z$ in $S$ such that $x*z=y$. (This $z$ may depend on $x$ and $y$.) Show that if $a,b,c$ are in $S$ and $a*c=b*c$, then $a = b$.
+    \end{exercise}
+
+    \begin{exercise}[2012 B2]
+        Let $P$ be a given (non-degenerate) polyhedron. Prove that there is a constant $c(P ) > 0$ with the following property: If a collection of $n$ balls whose volumes sum to $V$ contains the entire surface of $P$, then $n > c(P)/V^2$.
+    \end{exercise}
+
+    \begin{exercise}[2012 B4]
+        Suppose that \(a_0=1\) and that \(a_{n+1}=a_n+e^{-a_n}\) for \(n=0,1,2,\ldots\). Does \(a_n-\log n\) have a finite limit as \(n\to\infty\)? (Here, \(\log n=\log_en=\ln n\).)
+    \end{exercise}
+
+    \begin{exercise}[2014 A2]
+        Let $A$ be the $n \times n$ matrix whose entry in the $i$-th row and $j$-th column is
+        \[\frac{1}{\min(i, j)}
+        \]
+        for $1 \leq i, j \leq n$. Compute $\det(A)$.
+    \end{exercise}
+
+    \begin{exercise}[2014 B1]
+        A {\it base 10 over-expansion} of a positive integer \(N\) is an expression of the form
+        \[N = d_k10^k+d_{k-1}10^{k-1}+\cdots+d_010^0\]
+        with \(d_i\in\{0,1,2,\ldots,10\}\) for all \(i\).
+        For instance, the integer \(N=10\) has two base 10 over-expansions: \(10=10\cdot 10^0\) and \(10=1\cdot 10^1+0\cdot 10^0\).
+        Which positive integers have a unique base 10 over-expansion?
+    \end{exercise}
+
+    \begin{exercise}[2015 A1]
+        Let $A$ and $B$ be points on the same branch of the hyperbola $xy = 1$. Suppose that $P$ is a point lying between $A$ and $B$ on this hyperbola, such that the area of the triangle $APB$ is as large as possible. Show that the region bounded by the hyperbola and the chord $AP$ has the same area as the region bounded by the hyperbola and the chord $PB$.
+    \end{exercise}
+
+    \begin{exercise}[2016 A1]
+        Find the smallest positive integer $j$ such that for every polynomial $p(x)$ with integer coefficients and for every integer $k$, the integer
+        \[p^{(j)}(k) = \frac{d^j}{dx^j}p(x)\bigg|_{x=k}\] (the $j$-th derivative of $p(x)$ at $k$) is divisible by 2016.
+    \end{exercise}
+
+    \begin{exercise}[2016 B4]
+        Let \(A\) be a \(2n\times 2n\) matrix with entries chosen at random.
+        Each entry is chosen to be 0 or 1, each with probability \(1/2\).
+        Find the expected value of \(\det(A-A^T)\) as a function of \(n\), where \(A^T\) denoted the transpose of \(A\).
+    \end{exercise}
+
+    \begin{exercise}[2017 A2]
+        Let \(Q_0(x)=1\), \(Q_1(x)=x\), and
+        \[Q_n(x)=\frac{(Q_{n-1}(x))^2-1}{Q_{n-2}(x)}\]
+        for all \(n\geq 2\). Show that whenever \(n\) is a positive integer, \(Q_n(x)\) is a polynomial with integer coefficients.
+    \end{exercise}
+
+    \begin{exercise}[2017 A4]
+        A class with $2N$ students took a quiz, on which the possible scores were $0, 1,\dots , 10$. Each of these scores occurred at least once, and the average score was exactly $7.4$. Show that the class can be divided into two groups of $N$ students in such a way that the average score for each group was exactly $7.4$. 
+    \end{exercise}
+
+    \begin{exercise}[2017 B5]
+        A line in the plane of a triangle $T$ is called an equalizer if it divides $T$ into two regions having equal area and equal perimeter. Find positive integers $a > b > c$, with a as small as possible, such that there exists a triangle with side lengths $a, b, c$ that has exactly two equalizers.
+    \end{exercise}
+    
+    \begin{exercise}[2018 A6]
+        Suppose that $A$, $B$, $C$, and $D$ are distinct points, no three of which lie on a line, in the Euclidean plane. Show that if the squares of the lengths of the line segments $AB$, $AC$, $AD$, $BC$, $BD$, and $CD$ are rational numbers, then the quotient
+        \[\frac{\textrm{area}(\Delta ABC)}{\textrm{area}(\Delta ABD)}\]
+        is a rational number.
+    \end{exercise}
+
+    \begin{exercise}[2019 A1]
+        Determine all possible values of the expression
+        \[A^3+B^3+C^3-3ABC,\]
+        where \(A\), \(B\), and \(C\) are nonnegative integers.
+    \end{exercise}
+    
+    \begin{exercise}[2019 A2]
+        In the triangle \(\triangle ABC\), let \(G\) be the centroid, and let \(I\) be the center of the inscribed circle.
+        Let \(\alpha\) and \(\beta\) be the angles at the vertices \(A\) and \(B\), respectively.
+        Suppose that the segment \(IG\) is parallel to \(AB\) and that \(\beta=2\tan^{-1}(1/3)\).
+        Find \(\alpha\).
+    \end{exercise}
+
+    \begin{exercise}[2019 A6]
+        Let $g$ be a real-valued function that is continuous on $[0,1]$ and twice differentiable on the open interval $(0,1)$. Suppose that for some real number $r>1$, 
+        \[\lim_{x\to 0^+} \frac{g(x)}{x^r}=0\] Prove that either 
+        \[\lim_{x\to 0^+} g(x)=0\isp{or}\limsup_{x\to 0^+}x^r\abs{g''(x)} = +\infty\]
+    \end{exercise}
+
+    \begin{exercise}[2019 B1]
+        Denote by \(\bZ^2\) the set of all points \((x,y)\) in the plane with integer coordinates.
+        For each integer \(n\geq 0\), let \(P_n\) be the subset of \(\bZ^2\) consisting of the point \((0,0)\) together with all points \((x,y)\) such that \(x^2+y^2=2^k\) for some integer \(k\leq n\).
+        Determine, as a function of \(n\), the number of four point subsets of \(P_n\) whose elements are vertices of a square.
+    \end{exercise}
+    
+    \begin{exercise}[2019 B2]
+        For all \(n\geq 1\), let
+        \[a_n = \sum_{k=1}^{n-1}\frac{\sin\left(\frac{(2k-1)\pi}{2n}\right)}{\cos^2\left(\frac{(k-1)\pi}{2n}\right)\cos^2\left(\frac{k\pi}{2n}\right)}.\]
+        Determine $\lim_{n\to\infty}a_n /n^3$.
+    \end{exercise}
+
+    \begin{exercise}[2020 A1]
+        How many positive integers \(N\) satisfy all of the following three conditions?
+        \begin{enumerate}
+            \item[(i)] \(N\) is divisible by 2020.
+            \item[(ii)] \(N\) has at most 2020 decimal digits.
+            \item[(iii)] The decimal digits of \(N\) are a string of consecutive ones followed by a string of consecutive zeros.
+        \end{enumerate}
+    \end{exercise}
 
 \end{document}

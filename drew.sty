@@ -1,0 +1,522 @@
+\ProvidesPackage{drew}
+%% Argument processing
+% Default Arguments
+% We include "drew" in all of these to make sure
+% that they don't collide with anything in external packages
+\newif\ifdrewfancy\drewfancytrue
+\newif\ifdrewhdr\drewhdrtrue
+\newif\ifdrewhref\drewhreftrue
+\newif\ifdrewsetup\drewsetuptrue
+\newif\ifdrewthm\drewthmtrue
+\newif\ifdrewsecthm\drewsecthmfalse
+\newif\ifdrewht\drewhtfalse
+\newif\ifdrewpkg\drewpkgtrue
+\newif\ifdrewpdf\drewpdftrue
+\newif\ifdrewauthor\drewauthortrue
+\newif\ifdrewmdthm\drewmdthmfalse
+\newif\ifdrewdiagrams\drewdiagramsfalse
+\newif\ifdrewpatchasy\drewpatchasyfalse
+\newif\ifdrewhints\drewhintsfalse
+\newif\ifdrewasy\drewasytrue
+\newif\ifdrewcolorsec\drewcolorsecfalse
+\newif\ifdrewtitlemark\drewtitlemarktrue
+\newif\ifdrewvonenabled\drewvonenabledfalse
+
+\DeclareOption{sexy}{\drewsecthmtrue\drewmdthmtrue\drewcolorsectrue} % long docs
+
+\DeclareOption{fancy}{\drewfancytrue}
+\DeclareOption{nofancy}{\drewfancyfalse}
+\DeclareOption{hdr}{\drewhdrtrue}
+\DeclareOption{nohdr}{\drewhdrfalse}
+\DeclareOption{href}{\drewhreftrue}
+\DeclareOption{nohref}{\drewhreffalse}
+
+\DeclareOption{nosetup}{\drewsetupfalse}
+\DeclareOption{thm}{\drewthmtrue}
+\DeclareOption{nothm}{\drewthmfalse}
+\DeclareOption{secthm}{\drewsecthmtrue}
+\DeclareOption{nosecthm}{\drewsecthmfalse}
+
+\DeclareOption{ht}{\drewhttrue}
+\DeclareOption{nopdf}{\drewpdffalse}
+\DeclareOption{nopkg}{\drewpkgfalse}
+\DeclareOption{noauthor}{\drewauthorfalse}
+\DeclareOption{titlemark}{\drewtitlemarktrue} % Sets title in ohead, not \rightmark
+\DeclareOption{sectionmark}{\drewtitlemarkfalse} % Uses \rightmark not title in ohead
+
+\DeclareOption{mdthm}{\drewmdthmtrue}
+\DeclareOption{nomdthm}{\drewmdthmfalse}
+\DeclareOption{diagrams}{\drewdiagramstrue}
+\DeclareOption{nodiagrams}{\drewdiagramsfalse}
+\DeclareOption{colorsec}{\drewcolorsectrue}
+\DeclareOption{nocolorsec}{\drewcolorsecfalse}
+
+\DeclareOption{patchasy}{\drewpatchasytrue}
+\DeclareOption{noasy}{\drewasyfalse}
+
+\DeclareOption{hints}{\drewhintstrue}
+\DeclareOption{von}{\drewvonenabledtrue}
+
+\ProcessOptions\relax
+
+% if packages not loaded, turn off mdthm and asy
+\ifdrewpkg\else\drewmdthmfalse\fi
+\ifdrewpkg\else\drewasyfalse\fi
+
+% If no setup, turn off theorems
+\ifdrewsetup\else\drewthmfalse\fi
+
+%% Some macros
+% Small commands
+\ifdrewpkg
+	\usepackage{amsmath,amssymb}
+\fi
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\iff}{\Leftrightarrow}
+\renewcommand{\implies}{\Rightarrow}
+\newcommand{\term}[1]{\textbf{\color{blue} #1}}
+\providecommand{\alert}{\term}
+\newcommand{\hrulebar}{
+  \par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+
+% More commands and math operators
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+
+\newenvironment{soln}{\begin{proof}[Solution]}{\end{proof}} % Solution environment
+
+%From Kiran Kedlaya's "Geometry Unbound"
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\dang}{\measuredangle} %% Directed angle
+\newcommand{\ray}[1]{\overrightarrow{#1}} 
+\newcommand{\seg}[1]{\overline{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+
+\newcommand{\dd}[1]{\ensuremath{\operatorname{d}\!{#1}}} % Differential
+\newcommand{\id}{\mathrm{id}} % Identity
+\newcommand{\liff}{\leftrightarrow}
+\newcommand{\lthen}{\rightarrow}
+\newcommand{\opname}{\operatorname}
+\newcommand{\surjto}{\twoheadrightarrow}
+\newcommand{\injto}{\hookrightarrow}
+\DeclareMathOperator{\Aut}{Aut} % Automorphisms
+\DeclareMathOperator{\Inn}{Inn} % Inner automorphisms
+\DeclareMathOperator{\Syl}{Syl} % Sylow p-group
+\DeclareMathOperator{\Gal}{Gal} % Galois group
+\DeclareMathOperator{\GL}{GL} % General linear group
+\DeclareMathOperator{\SL}{SL} % Special linear group
+\DeclareMathOperator{\img}{im} % Image
+\DeclareMathOperator{\Img}{Im} % Image
+\DeclareMathOperator{\coker}{coker} % Cokernel
+\DeclareMathOperator{\Coker}{Coker} % Cokernel
+\DeclareMathOperator{\Ker}{Ker} % Kernel
+\DeclareMathOperator{\rank}{rank} % Rank
+\DeclareMathOperator{\Spec}{Spec} % Spectrum
+\DeclareMathOperator{\Tr}{Tr} % Trace
+\DeclareMathOperator{\pr}{pr} % Projection
+\DeclareMathOperator{\ext}{ext} % Extension
+\DeclareMathOperator{\dom}{dom} % Domain
+\DeclareMathOperator{\ran}{ran} % Range
+\DeclareMathOperator{\Hom}{Hom} % Homomorphisms
+\DeclareMathOperator{\Mor}{Mor} % Morphisms
+\DeclareMathOperator{\End}{End} % Endomorphisms
+
+% Math script letters
+\begingroup
+    \def\tmpa#1{%
+        \if\relax#1 \expandafter\noexpand \else
+            \expandafter\gdef\csname b#1\endcsname{\mathbb #1} % Blackboard bold
+            \expandafter\gdef\csname c#1\endcsname{\mathcal #1} % Calligraphic
+            \expandafter\gdef\csname f#1\endcsname{\mathfrak #1} % Fraktur
+			\expandafter\gdef\csname s#1\endcsname{\mathscr #1} % Script
+        \fi \tmpa
+    }
+    \tmpa ABCDEFGHIJKLMNOPQRSTUVWXYZ\relax
+\endgroup
+
+% Quality of life
+\newcommand{\isp}[1]{\quad\text{#1}\quad} % Intersperse
+\newcommand{\ds}{\displaystyle} % Displaystyle math
+
+%% Asymptote setup
+\ifdrewasy
+	\ifdrewpatchasy
+		\usepackage{patch-asy}
+	\else
+		\usepackage{asymptote}
+	\fi
+	\begin{asydef}
+		defaultpen(fontsize(12pt));
+		size(8cm); // set a reasonable default
+		usepackage("amsmath");
+		usepackage("amssymb");
+		settings.tex="pdflatex";
+		settings.outformat="pdf";
+		// Replacement for olympiad+cse5 which is not standard
+		import geometry;
+		// recalibrate fill and filldraw for conics
+		void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
+			{ filldraw(pic, (path) g, fillpen, drawpen); }
+		void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
+			{ filldraw(pic, (path) g, p); }
+		// some geometry
+		pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+		pair orthocenter(pair A, pair B, pair C) { return orthocentercenter(A,B,C); }
+		pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+		// cse5 abbrevations
+		path CP(pair P, pair A) { return circle(P, abs(A-P)); }
+		path CR(pair P, real r) { return circle(P, r); }
+		pair IP(path p, path q) { return intersectionpoints(p,q)[0]; }
+		pair OP(path p, path q) { return intersectionpoints(p,q)[1]; }
+		path Line(pair A, pair B, real a=0.6, real b=a) { return (a*(A-B)+A)--(b*(B-A)+B); }
+		// cse5 more useful functions
+		picture CC() {
+			picture p=rotate(0)*currentpicture;
+			currentpicture.erase();
+			return p;
+		}
+		pair MP(Label s, pair A, pair B = plain.S, pen p = defaultpen) {
+			Label L = s;
+			L.s = "$"+s.s+"$";
+			label(L, A, B, p);
+			return A;
+		}
+		pair Drawing(Label s = "", pair A, pair B = plain.S, pen p = defaultpen) {
+			dot(MP(s, A, B, p), p);
+			return A;
+		}
+		path Drawing(path g, pen p = defaultpen, arrowbar ar = None) {
+			draw(g, p, ar);
+			return g;
+		}
+	\end{asydef}
+\fi
+
+%% BEGIN MAIN SETUP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdrewsetup
+	%% Set up author and date
+	\ifdrewauthor
+		\title{} % empty title to avoid crashes
+		\author{Drew Miller}
+		\date{\today}
+	\fi
+	%% Hyperref
+	\ifdrewpkg
+		\PassOptionsToPackage{usenames,svgnames,dvipsnames,table}{xcolor}
+		\usepackage{xcolor}
+		\ifdrewhref
+			\usepackage[colorlinks=true]{hyperref}
+			\hypersetup{urlcolor=RubineRed,linkcolor=RoyalBlue,citecolor=ForestGreen}
+		\fi
+		\usepackage[nameinlink]{cleveref}
+	\fi
+
+	%% New Theorem Styles
+	\ifdrewthm
+		\usepackage{amsthm}
+		\usepackage{thmtools}
+	\fi
+	\ifdrewmdthm
+		\usepackage[framemethod=TikZ]{mdframed}
+
+		\mdfdefinestyle{mdbluebox}{%
+			roundcorner = 10pt,
+			linewidth=1pt,
+			skipabove=12pt,
+			innerbottommargin=9pt,
+			skipbelow=2pt,
+			linecolor=blue,
+			nobreak=true,
+			backgroundcolor=TealBlue!5,
+		}
+		\declaretheoremstyle[
+			headfont=\sffamily\bfseries\color{MidnightBlue},
+			mdframed={style=mdbluebox},
+			headpunct={\\[3pt]},
+			postheadspace={0pt}
+		]{thmbluebox}
+
+		\mdfdefinestyle{mdredbox}{%
+			linewidth=0.5pt,
+			skipabove=12pt,
+			frametitleaboveskip=5pt,
+			frametitlebelowskip=0pt,
+			skipbelow=2pt,
+			frametitlefont=\bfseries,
+			innertopmargin=8pt,
+			innerbottommargin=8pt,
+			nobreak=true,
+			backgroundcolor=Salmon!5,
+			linecolor=RawSienna,
+		}
+		\declaretheoremstyle[
+			headfont=\bfseries\color{RawSienna},
+			mdframed={style=mdredbox},
+			headpunct={\\[3pt]},
+			postheadspace={0pt},
+		]{thmredbox}
+
+		\mdfdefinestyle{mdgreenbox}{%
+			skipabove=8pt,
+			linewidth=2pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=ForestGreen,
+			backgroundcolor=ForestGreen!5,
+			innertopmargin=8pt,
+		}
+		\declaretheoremstyle[
+			headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+			bodyfont=\normalfont,
+			spaceabove=2pt,
+			spacebelow=1pt,
+			mdframed={style=mdgreenbox},
+			headpunct={ --- },
+		]{thmgreenbox}
+
+		\mdfdefinestyle{mdblackbox}{%
+			skipabove=8pt,
+			linewidth=3pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=black,
+			backgroundcolor=RedViolet!5!gray!5,
+			innertopmargin=8pt,
+		}
+		\declaretheoremstyle[
+			headfont=\bfseries,
+			bodyfont=\normalfont\small,
+			spaceabove=0pt,
+			spacebelow=0pt,
+			mdframed={style=mdblackbox}
+		]{thmblackbox}
+
+		\newcommand{\listhack}{$\empty$\vspace{-2em}}
+	\fi
+
+	%%fakesection Theorem setup
+	\ifdrewthm
+		\theoremstyle{definition}
+		%Branching here: the option secthm changes theorems to be labelled by section
+		\ifdrewmdthm
+			\ifdrewsecthm
+				\declaretheorem[%
+				style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+			\else
+				\declaretheorem[%
+				style=thmbluebox,name=Theorem]{theorem}
+			\fi
+			\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+			\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
+			\declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
+			\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
+			\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
+			\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
+			\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
+		\else
+			\ifdrewsecthm
+				\declaretheorem[name=Theorem,numberwithin=section]{theorem}
+			\else
+				\declaretheorem[name=Theorem]{theorem}
+			\fi
+			\declaretheorem[name=Lemma,sibling=theorem]{lemma}
+			\declaretheorem[name=Proposition,sibling=theorem]{proposition}
+			\declaretheorem[name=Corollary,sibling=theorem]{corollary}
+			\declaretheorem[name=Theorem,numbered=no]{theorem*}
+			\declaretheorem[name=Lemma,numbered=no]{lemma*}
+			\declaretheorem[name=Proposition,numbered=no]{proposition*}
+			\declaretheorem[name=Corollary,numbered=no]{corollary*}
+		\fi
+			
+		\ifdrewmdthm
+			\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
+			\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
+			\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+			\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+		\else
+			\declaretheorem[name=Algorithm,sibling=theorem]{algorithm}
+			\declaretheorem[name=Algorithm,numbered=no]{algorithm*}
+			\declaretheorem[name=Claim,sibling=theorem]{claim}
+			\declaretheorem[name=Claim,numbered=no]{claim*}
+		\fi
+
+		\ifdrewmdthm
+			\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
+			\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
+		\else
+			\declaretheorem[name=Example,sibling=theorem]{example}
+			\declaretheorem[name=Example,numbered=no]{example*}
+		\fi
+
+		% Remark-style theorems
+		%\theoremstyle{remark}
+		\ifdrewmdthm
+			\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+			\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+		\else
+			\declaretheorem[name=Remark,sibling=theorem]{remark}
+			\declaretheorem[name=Remark,numbered=no]{remark*}
+		\fi
+
+		\declaretheorem[name=Conjecture,sibling=theorem]{conjecture}
+		\declaretheorem[name=Conjecture,numbered=no]{conjecture*}
+		\declaretheorem[name=Definition,sibling=theorem]{definition}
+		\declaretheorem[name=Definition,numbered=no]{definition*}
+		\declaretheorem[name=Exercise,sibling=theorem]{exercise}
+		\declaretheorem[name=Exercise,numbered=no]{exercise*}
+		\declaretheorem[name=Fact,sibling=theorem]{fact}
+		\declaretheorem[name=Fact,numbered=no]{fact*}
+		\declaretheorem[name=Problem,sibling=theorem]{problem}
+		\declaretheorem[name=Problem,numbered=no]{problem*}
+		\declaretheorem[name=Question,sibling=theorem]{ques}
+		\declaretheorem[name=Question,numbered=no]{ques*}
+
+		\Crefname{claim}{Claim}{Claims}
+		\Crefname{conjecture}{Conjecture}{Conjectures}
+		\Crefname{exercise}{Exercise}{Exercises}
+		\Crefname{fact}{Fact}{Facts}
+		\Crefname{problem}{Problem}{Problems}
+		\Crefname{ques}{Question}{Questions}
+	\fi
+
+	%%fakesection Fancy section and chapter heads
+	\ifdrewcolorsec
+		\@ifundefined{KOMAClassName}{}{
+			\@ifundefined{chapter}{}{
+				\addtokomafont{partprefix}{\rmfamily}
+				\renewcommand*{\partformat}{\color{purple}
+					\scalebox{2.5}{\thepart}\enlargethispage{2em}}
+				\addtokomafont{chapterprefix}{\raggedleft}
+				\RedeclareSectionCommand[beforeskip=0.5em]{chapter}
+				\renewcommand*{\chapterformat}{\mbox{%
+					\scalebox{1.5}{\chapappifchapterprefix{\nobreakspace}}%
+					\scalebox{2.718}{\color{purple}\thechapter}\enskip}}
+			}
+			\renewcommand*{\sectionformat}%
+				{\color{purple}\S\thesection\enskip}
+			\renewcommand*{\subsectionformat}%
+				{\color{purple}\S\thesubsection\enskip}
+			\renewcommand*{\subsubsectionformat}%
+				{\color{purple}\S\thesubsubsection\enskip}
+			\KOMAoptions{numbers=noenddot}
+			%\usetocstyle{KOMAlike}
+		}
+	\fi
+
+
+	%%fakesection Loads a bunch of useful packages (but allow disabling)
+	\ifdrewpkg
+		\ifdrewvonenabled
+			\IfFileExists{von.sty}{\usepackage{von}}{}
+		\fi
+		\usepackage{listings} % For adding code
+		\usepackage{mathrsfs}
+		\usepackage{textcomp}
+		\lstset{basicstyle=\footnotesize\ttfamily,
+			numbers=left,
+			numbersep=5pt,
+			numberstyle=\tiny,
+			keywordstyle=\bfseries,
+			% title=\lstname,
+			showstringspaces=false,
+			tabsize=4,
+			frame=single,
+			keywordstyle=\bfseries\color{blue},
+			commentstyle=\color{green!70!black},
+			identifierstyle=\color{green!20!black},
+			stringstyle=\color{orange},
+			breaklines=true,
+			breakatwhitespace=true,
+			frame=none
+		}
+		\usepackage[shortlabels]{enumitem}
+		% a list I like for walkthrough's --- Drew-style parts
+		\newlist{walk}{enumerate}{3}
+		\setlist[walk]{label=\bfseries (\alph*)}
+		\setlength {\marginparwidth }{2cm}
+		\usepackage[obeyFinal,textsize=scriptsize,shadow]{todonotes}
+		\usepackage{textcomp}
+		\usepackage{multirow}
+		% Tiny tiny optimizations:
+		\usepackage{mathtools}
+		\usepackage{microtype}
+	\fi
+
+	%%fakesection \maketitle configuration
+	\@ifundefined{KOMAClassName}%
+		{} % do nothing outside KOMA class
+		{% If KOMA exists. . .
+		\addtokomafont{subtitle}{\Large}
+		\setkomafont{author}{\Large\scshape}
+		\setkomafont{date}{\Large\normalsize}
+		}
+	\providecommand{\thetitle}{\@title}
+	\providecommand{\theauthor}{\@author}
+	\providecommand{\thedate}{\@date}
+
+	%%fakesection Commutative diagrams support
+	\ifdrewdiagrams
+		\usepackage{tikz-cd}
+		\usetikzlibrary{decorations.pathmorphing}
+	\fi
+
+	%%fakesection Page Setup
+	\ifdrewfancy
+		\@ifundefined{KOMAClassName}
+		{
+			\usepackage{fancyhdr}
+			\setlength{\headheight}{0.75in}
+			\setlength{\oddsidemargin}{0in}
+			\setlength{\evensidemargin}{0in}
+			\setlength{\voffset}{-1.0in}
+			\setlength{\headsep}{10pt}
+			\setlength{\textwidth}{6.5in}
+			\setlength{\headwidth}{6.5in}
+			\setlength{\textheight}{8.75in}
+			\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+			\setlength{\footskip}{0.3in}
+			\ifdrewhdr
+				\renewcommand{\headrulewidth}{0.5pt}
+				\renewcommand{\footrulewidth}{0.0pt}
+				\pagestyle{fancy}
+				\lhead{Drew Miller}
+				\chead{}
+				\rhead{\nouppercase{\leftmark}}
+				\lfoot{}
+				\cfoot{\thepage}
+				\rfoot{}
+			\fi
+		}
+		{
+			\usepackage[headsepline]{scrlayer-scrpage}
+			\renewcommand{\headfont}{}
+			\addtolength{\textheight}{3.14cm}
+			\setlength{\footskip}{0.5in}
+			\setlength{\headsep}{10pt}
+			\ihead{\footnotesize\textbf{\theauthor} (\thedate)}
+			\automark{section}
+			\chead{}
+			\ohead{\footnotesize\textbf{\thetitle}}
+			\cfoot{\pagemark}
+		}
+	\fi
+
+\fi

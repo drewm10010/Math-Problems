@@ -921,10 +921,113 @@
 
 \section{Miscellaneous Topics}
 
+    \subsection{Generating Functions}
+
+        \begin{exercise}
+        Prove that 
+        \[\frac{1}{1-x-x^2} = \sum_{n=0}^\infty F_n x^n,\]
+        where \(F_n\) is the \(n\)th Fibonacci number.
+        \end{exercise}
+        
+        \begin{exercise}
+        In how many ways can we roll three dice to get a sum to 9?
+        \end{exercise}
+        
+        \begin{exercise}
+        Suppose four friends go to a carnival and each plays a game in which they can win 2 dollars, lose 1 dollar, or lose 2 dollars.
+        In how many ways can the friends collectively break even?
+        \end{exercise}
+        
+        \begin{exercise}
+        In how many different ways can I collect a total of 20 dollars from four different children and three different adults if each child can contribute up to 6 dollars and each adult can contribute up to 10 dollars?
+        \end{exercise}
+        
+        \begin{exercise}
+        Write the generating function for the number of ways we can form \(n\) cents using pennies, nickels, and dimes.
+        \end{exercise}
+        
+        \begin{exercise}
+        Write the generating function for the number of partitions of \(n\) into even parts.
+        \end{exercise}
+        
+        \begin{exercise}
+        Show that each positive integer has a unique base-2 representation (using generating functions, ideally).
+        \end{exercise}
+        
+        \begin{exercise}
+        Using generating functions, prove that 
+        \[\binom{n}{0}^2 + \binom{n}{1}^2 + \cdots + \binom{n}{n}^2 = \binom{2n}{n}.\]
+        \end{exercise}
+        
+        \begin{exercise}
+        Prove that for a given positive integer $k$ each positive integer $n$ has a unique representation of the form $n=\binom{b_1}{1}+\binom{b_2}{2}+\cdots+\binom{b_k}{k}$ where $0\leq b_1<\cdots< b_k$. 
+        \end{exercise}
+        
+        \begin{exercise}
+        Alberto places \(N\) checkers in a circle. Some, perhaps all, are black; the others are white.
+        (The distribution of colors is random.) Betul places new checkers between pairs of adjacent checkers in
+        Alberto's ring: she places a white checker between every two that are of the same color and a black checker
+        between every pair of opposite color. She then removes Alberto's original checkers to leave a new ring of \(N\)
+        checkers in a circle. Alberto then performs the same operation on Betul's ring of checkers following the same
+        rules. The two players alternately perform this maneuver over and over again. Show that if \(N\) is a power
+        of two, then all the checkers will eventually be white, no matter the arrangement of colors Alberto initially
+        puts down. Are there any interesting observations to be made if \(N\) is not a power of two?
+        \end{exercise}
+        
+        \begin{exercise}
+        \begin{enumerate}
+            \item[(a)] Let \(\zeta=\cos\frac{2\pi}{n} + i\sin\frac{2\pi}{n}\) be an \(n\)th root of unity (satisfies \(\zeta^n=1\)).
+            Show that the sum
+            \[1 + \zeta^k + \zeta^{2k} + \cdots + \zeta^{(n-1)k}\]
+            is \(n\) or 0, depending on whether \(k\) is a multiple of \(n\).
+            \item[(b)] Compute
+            \[\sum_{k=0}^{\lfloor n/3\rfloor}\binom{n}{3k}.\]
+        \end{enumerate}
+        \end{exercise}
+        
+        \begin{exercise}
+        A finite sequence \(a_1,a_2,\ldots,a_n\) is called \term{\(p\)-balanced} if any sum of the form
+        \[a_k + a_{k+p} + a_{k+2p} + \cdots\]
+        is the same for any \(k=1,2,\ldots,p\).
+        Prove that if a sequence of 50 members is \(p\)-balanced for each of \(p=3,5,7,11,13,17\), then all its members are equal to 0.
+        \end{exercise}
+        
+        \begin{exercise}[1987 IMO Shortlist]
+        Three persons $A$, $B$, $C$ play the following game: a subset with $k$ elements of the set $\{1,2,\dots,1986\}$ is selected randomly, all selections having the same probability. The winner is $A$, $B$, or $C$, according to whether the sum of the elements of the selected subset is congruent to $0$, $1$, or $2$ modulo $3$. Find all values of $k$ for which $A$, $B$, $C$ have equal chances of winning.
+        \end{exercise}
+
+        \begin{exercise}
+        Let $p>2$ be a prime. How many subsets of $\{1,2,\dots,p-1\}$ have the sum of their elements divisible by $p$?
+        \end{exercise}
+        
+        \begin{exercise}
+        Can the positive integers be partitioned into at least two arithmetic progressions such that they all have different common differences?
+        \end{exercise}
+
+        \begin{exercise}
+        The numbers $0,2,5,6$ have the property that their positive differences are the numbers $1,2,3,4,5,6$ each taken on once. Can this phenomenon occur for some number above $6$?
+        \end{exercise}
+
+        \begin{exercise}
+        Each bus ticket has a six digit number. We call a ticket \term{lucky} if the sum of the first three digits equals the sum of the last three digits. Prove that the number of lucky tickets is 
+        \[\frac{1}{\pi}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\left(\frac{\sin(10\theta)}{\sin\theta}\right)^6d\theta\]
+        \end{exercise}
+        
+        \begin{exercise}
+        Let $f(n)$, $g(n)$ be functions from the natural numbers $\bN\to \bC$. Define the \term{convolution} of $f$ and $g$ to be 
+        \[(f*g)(n) = \sum_{d\mid n} f(d)g\left(\frac{n}{d}\right)\] 
+        To $f$ and $g$, we may associate their corresponding \term{Dirichlet series} 
+        \[\sum_{n=1}^\infty \frac{f(n)}{n^s},\ \ \ \ \sum_{n=1}^\infty \frac{g(n)}{n^s}\] where $s$ is the variable here. Verify by multiplying out these series that 
+        \[\sum_{n=1}^\infty \frac{(f*g)(n)}{n^s} = \left(\sum_{n=1}^\infty \frac{f(n)}{n^s}\right)\left(\sum_{n=1}^\infty \frac{g(n)}{n^s}\right)\]
+        Define the \term{M\"obius function} $\mu:\bN\to \bC$ by 
+        \[\mu(n)=\begin{cases} 1 & n=1 \\ (-1)^k & \text{if $n=p_1\cdots p_k$ is square-free} \\ 0 & \text{otherwise}\end{cases}\]
+        Prove that its associated Dirichlet series $\sum_{n=1}^\infty \frac{\mu(n)}{n^s}$ is $1/\zeta(s)$, where $\zeta(s)$ is the Riemann zeta function. 
+        \end{exercise}
+
     \subsection{Recreational Mathematics}
 
     \begin{exercise}[Green-eyed dragons]
-        You visit a remote desert island inhabited by one hundred very friendly dragons, all of whom have green eyes. They haven’t seen a human for many centuries and are very excited about your visit. They show you around their island and tell you all about their dragon way of life (dragons can talk, of course).
+        You visit a remote desert island inhabited by one hundred very friendly dragons, all of whom have green eyes. They haven't seen a human for many centuries and are very excited about your visit. They show you around their island and tell you all about their dragon way of life (dragons can talk, of course).
     
         They seem to be quite normal, as far as dragons go, but then you find out something rather odd. They have a rule on the island that states that if a dragon ever finds out that he/she has green eyes, then at precisely midnight at the end of the day of this discovery, he/she must relinquish all dragon powers and transform into a long-tailed sparrow. However, there are no mirrors on the island, and the dragons never talk about eye color, so they have been living in blissful ignorance throughout the ages.
 

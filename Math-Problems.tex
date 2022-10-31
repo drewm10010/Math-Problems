@@ -342,6 +342,26 @@
             \[x_n<y_n\implies x_{n+1}<y_{n+1}\isp{and}y_{n+1}-x_{n+1}<\frac{y_n-x_n}{4}\text{ for all }n.\]
             Find the common limit \(\displaystyle\lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n=x=y\).
         \end{exercise}
+
+        
+        \begin{exercise} %%% https://www.math.cmu.edu/~cargue/arml/archive/15-16/proofs-02-28-16.pdf
+            An \(8\times 8\) chessboard is colored in the usual way.
+            You can take any row, column, or \(2\times2\) square and reverse the colors inside it, switching the color of each square from white to black or from black to white.
+            Prove that it is impossible to end up with 63 white squares and 1 black square.
+        \end{exercise}
+
+        \begin{exercise}
+            Suppose we have the symbols \texttt{M}, \texttt{I}, and \texttt{U}.
+            You begin with the string \texttt{MI}.
+            Transform this into the string \texttt{MU} using only the following operations:
+            \begin{enumerate}
+                \item Add \texttt{U} to the end of any string ending in \texttt{I} \((x\texttt{I}\mapsto x\texttt{IU})\)
+                \item Double the string after the first \texttt{M} \((\texttt{M}x\mapsto\texttt{M}xx)\)
+                \item Replace any \texttt{III} with \texttt{U} \((x\texttt{III}y\mapsto x\texttt{U}y)\)
+                \item Remove any \texttt{UU} \((x\texttt{UU}y\mapsto xy)\),
+            \end{enumerate}
+            or prove that this is impossible.
+        \end{exercise}
     
         \begin{exercise}[IMO 1985]
             Consider a set of 1985 positive integers, not necessarily distinct, and none with prime factors bigger than 23. Prove that there must exist four integers in this set whose product is equal to the fourth power of an integer.
